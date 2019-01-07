@@ -31,8 +31,9 @@ export default {
 
   head() {
     return {
-      title: `${config.sharing.title} - Gallery`,
+      title: `${config.siteTitle} - Gallery`,
       meta: createMetaTags({
+        siteName: config.siteTitle,
         title: config.sharing.title,
         description: config.sharing.description,
         image: config.sharing.image,

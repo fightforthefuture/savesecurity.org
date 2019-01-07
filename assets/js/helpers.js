@@ -15,7 +15,7 @@ export function createMetaTags(tags = {}) {
     'author': 'Fight for the Future',
     'og:description': tags.description,
     'og:image': tags.image,
-    'og:site_name': 'FFTF Starter Template',
+    'og:site_name': tags.siteName,
     'og:title': tags.title,
     'og:type': 'website',
     'og:url': tags.url,
