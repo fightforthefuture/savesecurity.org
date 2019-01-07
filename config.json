@@ -1,0 +1,17 @@
+{
+  "sharing": {
+    "title": "FFTF Starter Template",
+    "description": "A Fight for the Future website",
+    "image": "https://www.example.com/share.jpg",
+    "defaultTweetText": "",
+    "url": "https://www.example.com"
+  },
+  "googleAnalyticsId": "",
+  "actionNetworkPetitionId": "",
+  "callpowerCampaignId": "",
+  "donateUrl": "https://donate.fightforthefuture.org/",
+  "mapboxToken": "",
+  "callScript": "TODO: call script goes here",
+  "letterText": "Dear Legislators,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat ipsum ut felis ultricies ultricies ut sed velit. Proin lobortis efficitur turpis in commodo. Integer faucibus, tellus ac faucibus luctus, sapien diam ultricies elit, vel eleifend quam orci et lorem.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat ipsum ut felis ultricies ultricies ut sed velit. Proin lobortis efficitur turpis in commodo. Integer faucibus, tellus ac faucibus luctus sapien.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat ipsum ut felis ultricies ultricies ut sed velit. Proin lobortis efficitur turpis in commodo.\n\nSincerely,\n\n[Your Name Here]",
+  "isArchived": false
+}
