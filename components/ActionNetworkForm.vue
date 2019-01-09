@@ -46,9 +46,17 @@
         <input v-model="email" type="email" placeholder="Email*" required>
       </div> <!-- .flex-grid -->
       <div class="flex-grid sml-flex-row sml-push-y1">
-        <input v-model="address" type="text" placeholder="Address"
-               class="sml-flex-4">
-        <input v-model="zipCode" type="tel" placeholder="ZIP Code">
+        <input v-model="address"
+               type="text"
+               class="sml-flex-2"
+               placeholder="Address">
+        <input v-model="zipCode"
+               type="tel"
+               placeholder="ZIP">
+        <input v-model.trim="phone"
+               type="tel"
+               class="sml-flex-2"
+               placeholder="Phone # (for text list)">
       </div> <!-- .flex-grid -->
 
       <button class="btn btn-block sml-push-y1" :disabled="isSending">
@@ -79,7 +87,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import { sendToMothership } from '~/assets/js/helpers'
+import { sendToMothership, startTextFlow } from '~/assets/js/helpers'
 import ShareButton from '~/components/ShareButton'
 
 export default {
@@ -132,6 +140,15 @@ export default {
       set(value) {
         this.$store.commit('setZipCode', value)
       }
+    },
+
+    phone: {
+      get() {
+        return this.$store.state.phone
+      },
+      set(value) {
+        this.$store.commit('setPhone', value)
+      }
     }
   },
 
@@ -147,6 +164,7 @@ export default {
           member: {
             first_name: this.name,
             email: this.email,
+            phone_number: this.phone,
             street_address: this.address,
             postcode: this.zipCode,
             country: 'US'
@@ -166,10 +184,25 @@ export default {
         // this.$store.commit('setModalType', 'call-form')
         this.isSending = false
         this.hasSigned = true
+
+        if (this.phone) {
+          this.startTextFlow()
+        }
       } catch (err) {
         this.isSending = false
         this.errorMessage = 'Sorry, that didn’t work for some reason. Please try again.'
       }
+    },
+
+    startTextFlow() {
+      startTextFlow({
+        opt_in_path: this.$store.state.textFlowId,
+        phone: this.phone,
+        name: this.name,
+        email: this.email,
+        zip_code: this.zipCode,
+        street: this.address
+      })
     }
   }
 }
