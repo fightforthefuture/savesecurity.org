@@ -65,6 +65,18 @@ export function sendToMothership(data = {}, submission = {}) {
   return postFormData('https://queue.fftf.xyz/action', data)
 }
 
+// POST to start text flow
+export async function startTextFlow(params) {
+  const axios = require('axios')
+
+  try {
+    const { data } = await axios.post('https://text-flow-starter.fftf.xyz/opt-ins', params)
+    return data
+  } catch (error) {
+    return {}
+  }
+}
+
 // Wrap text with two new lines in paragraph tags
 export function simpleFormat(text) {
   return text.split('\n\n').map(l => `<p>${l}</p>`).join('')

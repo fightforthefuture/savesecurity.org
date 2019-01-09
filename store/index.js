@@ -7,6 +7,7 @@ const createStore = () => {
       // State > Config
       anPetitionId: config.actionNetworkPetitionId,
       callpowerCampaignId: config.callpowerCampaignId,
+      textFlowId: config.textFlowId,
       donateUrl: config.donateUrl,
       callScript: config.callScript,
       letterText: config.letterText,

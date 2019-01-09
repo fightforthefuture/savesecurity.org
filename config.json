@@ -10,6 +10,7 @@
   "googleAnalyticsId": "",
   "actionNetworkPetitionId": "",
   "callpowerCampaignId": "",
+  "textFlowId": "",
   "donateUrl": "https://donate.fightforthefuture.org/",
   "mapboxToken": "",
   "callScript": "TODO: call script goes here",

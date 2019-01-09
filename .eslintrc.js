@@ -17,6 +17,7 @@ module.exports = {
     'prefer-promise-reject-errors': 'off',
     'vue/no-v-html': 'off',
     'vue/html-closing-bracket-newline': 'off',
+    'vue/attributes-order': 'off',
     'vue/max-attributes-per-line': 'off',
     'vue/html-indent': 'off'
   }
