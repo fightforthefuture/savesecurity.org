@@ -56,7 +56,8 @@ body.modal-open {
 </style>
 
 <template>
-  <div v-if="modalVisible" class="modal-wrapper" :class="modalThemes" @click.self="close()">
+  <div v-if="modalVisible" class="modal-wrapper" :class="modalThemes"
+       @click.self="close()">
     <div class="modal">
       <div class="modal-scroll sml-pad-2 sml-pad-y4 med-pad-4">
         <slot />
