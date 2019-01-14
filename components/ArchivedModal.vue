@@ -1,12 +1,3 @@
-<style lang="scss">
-  .modal-wrapper {
-    background-color: transparentize($black, 0.5);
-  }
-  .modal {
-    max-width: 400px;
-  }
-</style>
-
 <template>
   <div class="text-center">
     <!-- TODO: swap image with fftf-logo.svg if modal has a dark background -->

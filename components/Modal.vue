@@ -45,10 +45,18 @@ body.modal-open {
 .modal .close:focus {
   outline: none;
 }
+
+// Modal > Themes
+.modal-translucent.modal-wrapper {
+  background-color: transparentize($black, 0.5);
+}
+.modal-narrow .modal {
+  max-width: 400px;
+}
 </style>
 
 <template>
-  <div v-if="modalVisible" class="modal-wrapper" @click.self="close()">
+  <div v-if="modalVisible" class="modal-wrapper" :class="modalThemes" @click.self="close()">
     <div class="modal">
       <div class="modal-scroll sml-pad-2 sml-pad-y4 med-pad-4">
         <slot />
@@ -59,9 +67,23 @@ body.modal-open {
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   computed: {
-    modalVisible() { return this.$store.state.modalVisible }
+    ...mapState(['modalVisible', 'modalType']),
+
+    modalThemes() {
+      const t = this.modalType
+
+      if (t === 'archived') {
+        return 'modal-narrow modal-translucent'
+      } else if (t === 'selfie') {
+        return 'modal-narrow'
+      } else {
+        return null
+      }
+    }
   },
 
   watch: {

@@ -1,9 +1,3 @@
-<style lang="scss">
-  .modal{
-    max-width: 400px;
-  }
-</style>
-
 <template>
   <div v-if="selfie" class="text-center">
     <SelfieFeature :selfie="selfie" />
