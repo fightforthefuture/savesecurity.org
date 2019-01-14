@@ -1,29 +1,23 @@
 <template>
   <div>
     <h2>
-      <span class="text-success">
-Thanks!
-</span> Can you call?
+      <span class="text-success">Thanks!</span> Can you call?
     </h2>
     <p class="sml-push-y1">
       We&rsquo;ll provide you with a suggestion of what to say and connect you
       directly with your lawmaker&rsquo;s office.
     </p>
     <p v-if="errorMessage" class="text-warn sml-push-y2">
-{{ errorMessage }}
-</p>
+      {{ errorMessage }}
+    </p>
     <form class="flex-grid sml-flex-row sml-push-y2" @submit.prevent="submitForm()">
       <input v-model.trim="phone" class="phone sml-flex-2" type="tel"
              placeholder="Phone Number*" required>
       <input v-model.trim="zipCode" class="zip" type="tel"
              placeholder="ZIP Code*" required>
       <button class="btn" :disabled="isSending">
-        <span v-if="isSending">
-...
-</span>
-        <span v-else>
-Call
-</span>
+        <span v-if="isSending">...</span>
+        <span v-else>Call</span>
       </button>
     </form>
     <p class="sml-push-y1 text-meta">
@@ -31,8 +25,7 @@ Call
         Your number will only be used for this call and will never be shared
         with third parties.
         <a href="https://www.battleforthenet.com/privacy/" target="_blank">
-          Privacy Policy
-</a>
+          Privacy Policy</a>
       </small>
     </p>
   </div>

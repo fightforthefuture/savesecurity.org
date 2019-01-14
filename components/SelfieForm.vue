@@ -39,8 +39,8 @@
       <form class="sml-push-y2 med-push-y3" @submit.prevent="submitForm()">
         <div class="sml-push-y2 med-push-y3 sml-pad-2 fill-grey is-rounded-top">
           <p v-if="errorMessage" class="text-warn text-center">
-{{ errorMessage }}
-</p>
+            {{ errorMessage }}
+          </p>
           <div class="flex-grid sml-flex-col med-flex-row" :class="{'sml-push-y-half': errorMessage}">
             <div>
               <div class="preview-container grid-center is-rounded"

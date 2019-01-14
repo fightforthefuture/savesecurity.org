@@ -31,8 +31,8 @@
 }
 .hoz > li {
   display: inline-block;
-  padding-left:  $gutter;
-  padding-right: $gutter;
+  padding-left:  $gutter/2;
+  padding-right: $gutter/2;
 }
 .hoz > li:first-of-type {
   @include respond-to(med) {

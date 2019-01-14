@@ -1,6 +1,8 @@
 /// Video
 
-video {
+video,
+iframe {
   display: block;
   max-width: 100%;
+  min-height: $gutter*40;
 }

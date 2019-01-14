@@ -85,6 +85,7 @@ input[type=submit] {
 a {
   // TODO: revisit this style
   color: $brand-color;
+  cursor: pointer;
   border-bottom: 1px solid transparent;
   text-decoration: none;
 }
