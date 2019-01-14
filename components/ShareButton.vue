@@ -3,15 +3,15 @@
      :class="[ isButton ? `btn btn-${networkName}` : '' ]"
      @click.prevent="share()">
     <slot>
-      <span v-if="shouldDisplayText">
-        {{ network }}
-      </span>
       <img v-if="networkName === 'twitter' && shouldDisplayIcon"
            src="~/assets/images/twitter-logo.svg"
            alt="Twitter logo">
       <img v-if="networkName === 'facebook' && shouldDisplayIcon"
            src="~/assets/images/facebook-logo.svg"
            alt="Facebook logo">
+      <span v-if="shouldDisplayText">
+        {{ network }}
+      </span>
     </slot>
   </a>
 </template>

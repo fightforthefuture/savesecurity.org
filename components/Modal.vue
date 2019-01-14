@@ -53,9 +53,7 @@ body.modal-open {
       <div class="modal-scroll sml-pad-2 sml-pad-y4 med-pad-4">
         <slot />
       </div> <!-- .modal-scroll -->
-      <button class="close text-brand-light" @click="close()">
-&times;
-</button>
+      <button class="close text-brand-light" @click="close()">&times;</button>
     </div> <!-- .modal -->
   </div> <!-- .modal-wrapper -->
 </template>

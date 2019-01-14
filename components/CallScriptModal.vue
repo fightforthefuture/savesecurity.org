@@ -19,8 +19,8 @@
         <strong>Introduce yourself, be polite, and say:</strong>
       </p>
       <p class="text-meta">
-{{ callScript }}
-</p>
+        {{ callScript }}
+      </p>
       <div class="sml-pad-y2">
         <p>
           <img src="~/assets/images/warning-icon.svg" alt="!"

@@ -20,8 +20,8 @@
 
       <div class="sml-push-y2 text-center">
         <a v-if="!isEndOfFeed" class="btn" @click="loadMore">
-Load More
-</a>
+          Load More
+        </a>
         <p v-else class="text-brand-light">
           You&rsquo;ve reached the end of the feed, but there are still millions
           more people fighting for Net Neutrality across the country.

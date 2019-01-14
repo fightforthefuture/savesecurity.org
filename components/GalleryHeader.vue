@@ -15,8 +15,8 @@
             <form>
               <select v-model="selectedState" @change="updateSelectedState()">
                 <option :value="null">
-Show all states
-</option>
+                  Show all states
+                </option>
                 <option v-for="(name, code) in states" :key="code" :value="code">
                   {{ name }}
                 </option>

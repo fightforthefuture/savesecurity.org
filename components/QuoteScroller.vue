@@ -53,8 +53,8 @@
       <div :key="`slide-${activeSlide}`" class="sml-pad-x1">
         <blockquote>{{ quotes[activeSlide].text }}</blockquote>
         <p class="text-brand">
-{{ quotes[activeSlide].source }}
-</p>
+          {{ quotes[activeSlide].source }}
+        </p>
       </div>
     </transition>
     <a class="arrow" @click.prevent="next">
