@@ -18,7 +18,7 @@
         </p>
         <p class="sml-push-y1 tuck-bottom">
           <small>
-            <a href="tel://9788526457">978-852-6457</a> or
+            <a href="tel://5083683026">(508) 368-3026</a> or
             <a href="mailto:press@fightforthefuture.org">
               press@fightforthefuture.org</a>
           </small>
