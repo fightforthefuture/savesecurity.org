@@ -65,6 +65,17 @@ export function sendToMothership(data = {}, submission = {}) {
   return postFormData('https://queue.fftf.xyz/action', data)
 }
 
+//  POST to counter, accepts a string
+export async function pingCounter(counter) {
+  const axios = require('axios')
+
+  try {
+    await axios.post(`https://counter.fftf.xyz/ping/${counter}`)
+  } catch (error) {
+    //
+  }
+}
+
 // POST to start text flow
 export async function startTextFlow(params) {
   const axios = require('axios')
