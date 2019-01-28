@@ -1,6 +1,9 @@
 /// Spacing
 
 // Spacing > Padding
+.sml-pad-half {
+  padding: $gutter/2;
+}
 @each $i in 1, 2, 3, 4, 5, 6 {
   .sml-pad-#{$i} {
     padding: $gutter * ($i);
