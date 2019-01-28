@@ -12,7 +12,9 @@
 </template>
 
 <script>
+import config from '~/config'
 import { mapState } from 'vuex'
+import { createMetaTags } from '~/assets/js/helpers'
 import Modal from '~/components/Modal'
 import CallFormModal from '~/components/CallFormModal'
 import CallScriptModal from '~/components/CallScriptModal'
@@ -26,6 +28,19 @@ export default {
     CallScriptModal,
     SelfieModal,
     ArchivedModal
+  },
+
+  head() {
+    return {
+      title: config.siteTitle,
+      meta: createMetaTags({
+        siteName: config.siteTitle,
+        title: config.sharing.title,
+        description: config.sharing.description,
+        image: config.sharing.image,
+        url: config.sharing.url
+      })
+    }
   },
 
   computed: {

@@ -18,8 +18,6 @@
 </template>
 
 <script>
-import config from '~/config'
-import { createMetaTags } from '~/assets/js/helpers'
 import GalleryLayout from '~/components/GalleryLayout'
 import SelfieGrid from '~/components/SelfieGrid'
 
@@ -31,14 +29,7 @@ export default {
 
   head() {
     return {
-      title: `${config.siteTitle} - Gallery`,
-      meta: createMetaTags({
-        siteName: config.siteTitle,
-        title: config.sharing.title,
-        description: config.sharing.description,
-        image: config.sharing.image,
-        url: config.sharing.url
-      }),
+      titleTemplate: '%s - Gallery',
       bodyAttrs: {
         class: 'full-width'
       }
