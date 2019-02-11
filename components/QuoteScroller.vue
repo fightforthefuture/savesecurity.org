@@ -64,15 +64,15 @@
 </template>
 
 <script>
-import quotes from '~/assets/data/quotes.json'
+import quotes from '~/data/quotes.json'
 
 export default {
-
   data() {
     return {
       activeSlide: 0
     }
   },
+
   computed: {
     quotes() { return quotes }
   },
