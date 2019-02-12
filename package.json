@@ -33,7 +33,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "exif-js": "^2.3.0",
     "node-sass": "^4.11.0",
-    "nuxt-sass-resources-loader": "^2.0.5",
+    "@nuxtjs/style-resources": "^0.1.2",
     "sass-loader": "^7.1.0"
   }
 }

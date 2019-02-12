@@ -66,7 +66,7 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'nuxt-sass-resources-loader'
+    '@nuxtjs/style-resources'
   ],
   /*
   ** Axios module configuration
@@ -74,9 +74,11 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-  sassResources: [
-    '~/assets/css/_setup.scss'
-  ],
+  styleResources: {
+    scss: [
+      '~assets/css/_setup.scss'
+    ]
+  },
 
   /*
   ** Build configuration
