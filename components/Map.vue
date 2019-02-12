@@ -60,7 +60,7 @@
 
     &:before {
       content: "";
-      background-image: url("~/assets/images/map-pin.svg");
+      background-image: url("~assets/images/map-pin.svg");
       background-size: 100%;
       background-repeat: no-repeat;
       background-position: center;
@@ -72,7 +72,7 @@
   }
 
   .date:before {
-    background-image: url("~/assets/images/map-calendar.svg");
+    background-image: url("~assets/images/map-calendar.svg");
   }
 
   .leaflet-popup-close-button {
