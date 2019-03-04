@@ -109,5 +109,12 @@ module.exports = {
         targets: { ie: 9, uglify: true }
       }]
     ]
+  },
+
+  /*
+  ** Generate Routes
+  */
+  generate: {
+    fallback: "error.html"
   }
 }
