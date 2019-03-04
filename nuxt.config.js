@@ -115,6 +115,6 @@ module.exports = {
   ** Generate Routes
   */
   generate: {
-    fallback: true
+    fallback: "error.html"
   }
 }
