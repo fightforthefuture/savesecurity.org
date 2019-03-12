@@ -15,7 +15,9 @@
          class="sml-pad-y2"
          :class="{ 'with-border-bottom': index < classes.length-1 }">
       <p>
-        <span class="styleguide-class-tag" v-text="c ? `.${c}` : 'Default'"></span>
+        <span class="styleguide-class-tag"
+              v-text="c ? `.${c.replace(' ', '.')}` : 'Default'">
+        </span>
       </p>
       <div class="sml-push-y-half">
         <slot name="elem" :c="c"/>

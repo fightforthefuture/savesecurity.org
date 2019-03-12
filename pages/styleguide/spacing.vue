@@ -2,7 +2,7 @@
   <StyleguideLayout :component-name="title">
     <p>
       <strong class="text-brand">NOTE:</strong> There are more options than
-      those presented here. Please see <code>_spacing.scss</code>.
+      those presented here. Please see: <code>_spacing.scss</code>.
     </p>
     <StyleguideBlock :classes="paddingClasses">
       <template v-slot:elem="{ c }">
