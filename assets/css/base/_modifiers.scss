@@ -13,9 +13,9 @@
   border-bottom-right-radius: $default-border-radius;
   border-bottom-left-radius:  $default-border-radius;
 }
-// .with-border {
-//   border: 1px solid $grey-light-color;
-// }
+.with-border {
+  border: 1px solid $grey-light-color;
+}
 .with-border-bottom {
   border-bottom: 1px solid $grey-light-color;
 }
