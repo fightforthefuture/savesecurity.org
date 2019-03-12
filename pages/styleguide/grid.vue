@@ -24,7 +24,7 @@
 </style>
 
 <template>
-  <div>
+  <StyleguideLayout :component-name="title">
     <div class="grid-example">
       <h2>Default Grid Columns</h2>
       <div class="row sml-push-y1">
@@ -84,5 +84,19 @@
         </div> <!-- .c -->
       </div> <!-- .row -->
     </div> <!-- .grid-example -->
-  </div>
+  </StyleguideLayout>
 </template>
+
+<script>
+import StyleguideLayout from '~/components/StyleguideLayout'
+
+export default {
+  components: {
+    StyleguideLayout
+  },
+
+  computed: {
+    title() { return 'Grid' }
+  }
+}
+</script>

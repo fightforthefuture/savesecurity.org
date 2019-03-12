@@ -1,7 +1,6 @@
 <template>
-  <StyleguideLayout>
+  <StyleguideLayout :component-name="title">
     <div v-if="componentInstance">
-      <h1>{{ title }}</h1>
       <component v-if="componentInstance" :is="componentInstance" class="sml-push-y2 med-push-y4">
       </component>
     </div> <!-- v-if -->
