@@ -1,8 +1,7 @@
 <template>
   <StyleguideLayout :component-name="title">
     <div v-if="componentInstance">
-      <component v-if="componentInstance" :is="componentInstance" class="sml-push-y2 med-push-y4">
-      </component>
+      <component v-if="componentInstance" :is="componentInstance"></component>
     </div> <!-- v-if -->
     <p v-else>No styleguide section found</p>
   </StyleguideLayout>
