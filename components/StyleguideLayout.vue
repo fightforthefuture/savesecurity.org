@@ -163,7 +163,7 @@ export default {
   props: {
     componentName: {
       type: String,
-      required: true,
+      required: false,
       default: null
     }
   },
