@@ -20,7 +20,7 @@
         </span>
       </p>
       <div class="sml-push-y-half">
-        <slot name="elem" :c="c"/>
+        <slot name="elem" :c="c" />
       </div> <!-- .push -->
     </div> <!-- .with-border -->
   </div>
