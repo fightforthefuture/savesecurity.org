@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "deploy": "aws s3 sync dist s3://www.example.com --acl public-read --delete --exclude 'styleguide/*'",
   },
   "dependencies": {
     "cross-env": "^5.2.0",
