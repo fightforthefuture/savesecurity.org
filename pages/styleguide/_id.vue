@@ -1,7 +1,11 @@
 <template>
   <StyleguideLayout>
-    <h1>{{ title }}</h1>
-    <component :is="componentInstance" class="sml-push-y2 med-push-y4"></component>
+    <div v-if="componentInstance">
+      <h1>{{ title }}</h1>
+      <component v-if="componentInstance" :is="componentInstance" class="sml-push-y2 med-push-y4">
+      </component>
+    </div> <!-- v-if -->
+    <p v-else>No styleguide section found</p>
   </StyleguideLayout>
 </template>
 
@@ -19,6 +23,12 @@ export default {
     }
   },
 
+  data() {
+    return {
+      componentInstance: null
+    }
+  },
+
   computed: {
     id() {
       return this.$route.params.id
@@ -26,9 +36,20 @@ export default {
     title() {
       return `${this.id.charAt(0).toUpperCase()}${this.id.slice(1)}`
     },
-    componentInstance() {
+    componentLoader() {
+      if (!this.id) {
+        return null
+      }
       return () => import(`~/components/${this.id}`)
     }
+  },
+
+  mounted() {
+    this.componentLoader().then(() => {
+      this.componentInstance = () => this.componentLoader()
+    }).catch(() => {
+      console.log('No component found')
+    })
   }
 }
 </script>
