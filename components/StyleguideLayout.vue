@@ -10,9 +10,9 @@
           </div> <!-- .c -->
           <div class="sml-c6 med-c4">
             <ul class="hoz sml-push-y-half">
-              <li><nuxt-link to="/styleguide/grid">Grid</nuxt-link></li>
-              <li><nuxt-link to="/styleguide/typography">Typography</nuxt-link></li>
-              <li><nuxt-link to="/styleguide/ActionNetworkForm">ActionNetworkForm</nuxt-link></li>
+              <li v-for="s in sections" :key="`link-${s}`">
+                <nuxt-link :to="{ path: `/styleguide/${s}` }">{{ s }}</nuxt-link>
+              </li>
             </ul> <!-- .flex-grid -->
           </div> <!-- .c -->
         </div> <!-- .row -->
@@ -33,6 +33,16 @@
 import config from '~/config'
 
 export default {
+  data() {
+    return {
+      sections: [
+        'grid',
+        'typography',
+        'ActionNetworkForm'
+      ]
+    }
+  },
+
   computed: {
     title() { return config.siteTitle }
   }
