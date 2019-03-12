@@ -40,18 +40,21 @@
                         </nuxt-link>
                       </li>
                       <li>
-                        <nuxt-link to="/styleguide/buttons">Buttons</nuxt-link>
-                      </li>
-                      <li>
-                        <nuxt-link to="/styleguide/forms">Forms</nuxt-link>
-                      </li>
-                      <li>
                         <nuxt-link to="/styleguide/spacing">Spacing</nuxt-link>
                       </li>
                       <li>
                         <nuxt-link to="/styleguide/modifiers">
                           Modifiers
                         </nuxt-link>
+                      </li>
+                      <li>
+                        <nuxt-link to="/styleguide/buttons">Buttons</nuxt-link>
+                      </li>
+                      <li>
+                        <nuxt-link to="/styleguide/forms">Forms</nuxt-link>
+                      </li>
+                      <li>
+                        <nuxt-link to="/styleguide/lists">Lists</nuxt-link>
                       </li>
                     </ul>
                   </div> <!-- .c -->
