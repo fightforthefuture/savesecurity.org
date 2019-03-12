@@ -29,6 +29,9 @@
                     <h2>Base</h2>
                     <ul>
                       <li>
+                        <nuxt-link to="/styleguide/colors">Colors</nuxt-link>
+                      </li>
+                      <li>
                         <nuxt-link to="/styleguide/grid">Grid</nuxt-link>
                       </li>
                       <li>
