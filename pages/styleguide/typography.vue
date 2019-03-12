@@ -7,22 +7,25 @@
     <h5>Heading 5</h5>
     <h6>Heading 6</h6>
 
-    <p v-for="c in classes"
-       :key="`type-class-${c}`"
-       class="sml-push-y2"
-       :class="c">
-      This is some text <strong>in bold</strong> and <em>emphasized</em>,
-      <a href="#">with a link</a>.
-    </p>
+    <StyleguideBlock :classes="classes" class="sml-push-y2 med-push-y4">
+      <template v-slot:elem="{ c }">
+        <p :class="c">
+          This is some text <strong>in bold</strong> and <em>emphasized</em>,
+          <a href="#">with a link</a>.
+        </p>
+      </template>
+    </StyleguideBlock>
   </StyleguideLayout>
 </template>
 
 <script>
 import StyleguideLayout from '~/components/StyleguideLayout'
+import StyleguideBlock from '~/components/StyleguideBlock'
 
 export default {
   components: {
-    StyleguideLayout
+    StyleguideLayout,
+    StyleguideBlock
   },
 
   data() {

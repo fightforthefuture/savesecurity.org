@@ -66,10 +66,13 @@ button.btn {
 // Buttons > Disabled
 .btn:disabled,
 .btn[disabled],
+.btn.btn-disabled,
 .btn:disabled:hover,
 .btn[disabled]:hover,
+.btn.btn-disabled:hover,
 .btn:disabled:focus,
-.btn[disabled]:focus {
+.btn[disabled]:focus,
+.btn.btn-disabled:focus, {
   background: $grey-color;
   cursor: default;
 }

@@ -36,6 +36,9 @@
                           Typography
                         </nuxt-link>
                       </li>
+                      <li>
+                        <nuxt-link to="/styleguide/buttons">Buttons</nuxt-link>
+                      </li>
                     </ul>
                   </div> <!-- .c -->
                   <div class="sml-c12 med-c4 sml-push-y2 med-push-y0">
