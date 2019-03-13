@@ -1,7 +1,9 @@
 <template>
   <StyleguideLayout :component-name="title">
     <div v-if="componentInstance">
-      <component v-if="componentInstance" :is="componentInstance"></component>
+      <StyleguideExample>
+        <component v-if="componentInstance" :is="componentInstance"></component>
+      </StyleguideExample>
     </div> <!-- v-if -->
     <p v-else>No styleguide section found</p>
   </StyleguideLayout>
@@ -9,10 +11,12 @@
 
 <script>
 import StyleguideLayout from '~/components/StyleguideLayout'
+import StyleguideExample from '~/components/StyleguideExample'
 
 export default {
   components: {
-    StyleguideLayout
+    StyleguideLayout,
+    StyleguideExample
   },
 
   head() {

@@ -1,16 +1,20 @@
 <template>
   <StyleguideLayout :component-name="title">
-    <Map :events="events" />
+    <StyleguideExample>
+      <Map :events="events" />
+    </StyleguideExample>
   </StyleguideLayout>
 </template>
 
 <script>
 import StyleguideLayout from '~/components/StyleguideLayout'
+import StyleguideExample from '~/components/StyleguideExample'
 import Map from '~/components/Map'
 
 export default {
   components: {
     StyleguideLayout,
+    StyleguideExample,
     Map
   },
 
