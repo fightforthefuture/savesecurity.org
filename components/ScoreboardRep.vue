@@ -1,12 +1,8 @@
 <style lang="scss" scoped>
-.rep-link {
-  display: block;
-  max-width: 100px;
-  border: none;
-}
 .rep-photo {
   position: relative;
   overflow: hidden;
+  max-width: 225px; // NOTE: determined by width of photos
 }
 .rep-photo img {
   filter: grayscale(100%); // NOTE: limited browser support
@@ -40,21 +36,18 @@
 </style>
 
 <template>
-  <a href="#TODO" class="rep-link">
-    <div class="rep-photo is-rounded"
-      :class="{
-        'vote-yes': rep.supports_net_neutrality === true,
-        'vote-no': rep.supports_net_neutrality === false
-      }">
-      <img :src="`https://congress-photos.fightforthefuture.org/225x275/${rep.bioguide_id}.jpg`"
-           :alt="`Photo of ${subtitle} ${fullName}`">
-      <h5 class="rep-name text-white">
-        {{ rep.last_name }}
-        <small>{{ subtitle }}</small>
-      </h5>
-    </div> <!-- .rep-photo -->
-    <div class="btn btn-sml btn-block sml-push-y-half">View</div>
-  </a>
+  <div class="rep-photo is-rounded"
+    :class="{
+      'vote-yes': rep.supports_net_neutrality === true,
+      'vote-no': rep.supports_net_neutrality === false
+    }">
+    <img :src="`https://congress-photos.fightforthefuture.org/225x275/${rep.bioguide_id}.jpg`"
+         :alt="`Photo of ${subtitle} ${fullName}`">
+    <h5 class="rep-name text-white">
+      {{ rep.last_name }}
+      <small>{{ subtitle }}</small>
+    </h5>
+  </div> <!-- .rep-photo -->
 </template>
 
 <script>

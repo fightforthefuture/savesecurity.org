@@ -2,9 +2,14 @@
 .politicians {
   text-align: center;
 }
-.politician {
+.rep {
   display: inline-block;
   margin: $gutter;
+}
+.rep-link {
+  display: block;
+  max-width: 100px;
+  border: none;
 }
 </style>
 
@@ -25,9 +30,12 @@
       <div v-if="politicians.length > 0" class="fade-in sml-push-y2">
         <div v-for="rep in politicians"
              :key="`rep-${rep.bioguide_id}`"
-             class="politician">
-          <ScoreboardRep :rep="rep" />
-        </div> <!-- .politician -->
+             class="rep">
+          <nuxt-link :to="`/scoreboard/${rep.bioguide_id}`" class="rep-link">
+            <ScoreboardRep :rep="rep" />
+            <div class="btn btn-sml btn-block sml-push-y-half">View</div>
+          </nuxt-link>
+        </div> <!-- .rep -->
       </div> <!-- v-if -->
       <div v-else-if="selectedState && !isLoading">
         <h3>No politicians found</h3>
@@ -41,7 +49,7 @@
 
 <script>
 import { geocodeState } from '~/assets/js/helpers'
-import US_STATES from '~/data/states.json'
+import US_STATES from '~/assets/data/states.json'
 import ScoreboardRep from '~/components/ScoreboardRep'
 
 export default {

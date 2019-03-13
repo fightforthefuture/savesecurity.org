@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import US_STATES from '~/data/states.json'
+import US_STATES from '~/assets/data/states.json'
 import Logo from '~/components/Logo'
 
 export default {
