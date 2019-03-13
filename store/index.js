@@ -1,142 +1,137 @@
-import Vuex from 'vuex'
 import config from '~/config'
 
-const createStore = () => {
-  return new Vuex.Store({
-    state: {
-      // State > Config
-      anPetitionId: config.actionNetworkPetitionId,
-      callpowerCampaignId: config.callpowerCampaignId,
-      textFlowId: config.textFlowId,
-      donateUrl: config.donateUrl,
-      callScript: config.callScript,
-      letterText: config.letterText,
-      isArchived: config.isArchived,
+export const state = () => ({
+  // State > Config
+  anPetitionId: config.actionNetworkPetitionId,
+  callpowerCampaignId: config.callpowerCampaignId,
+  textFlowId: config.textFlowId,
+  donateUrl: config.donateUrl,
+  callScript: config.callScript,
+  letterText: config.letterText,
+  isArchived: config.isArchived,
 
-      // State > Modal
-      modalVisible: !!config.isArchived,
-      modalType: config.isArchived ? 'archived' : null,
-      modalData: null,
+  // State > Modal
+  modalVisible: !!config.isArchived,
+  modalType: config.isArchived ? 'archived' : null,
+  modalData: null,
 
-      // State > Map
-      mapboxToken: config.mapboxToken,
-      map: {
-        zoom: null,
-        currentPin: null
-      },
+  // State > Map
+  mapboxToken: config.mapboxToken,
+  map: {
+    zoom: null,
+    currentPin: null
+  },
 
-      // State > Petition Form Fields
-      name: null,
-      email: null,
-      address: null,
-      zipCode: null,
-      phone: null,
+  // State > Petition Form Fields
+  name: null,
+  email: null,
+  address: null,
+  zipCode: null,
+  phone: null,
 
-      // State > Photo Gallery
-      selfies: null,
-      selfiesCurPageNum: 1,
+  // State > Photo Gallery
+  selfies: null,
+  selfiesCurPageNum: 1,
 
-      // State > Photo Submissions
-      photoSource: null,
-      selfie: {}
-    },
-    mutations: {
-      // Mutations > Modal
-      setModalVisibility(state, value) {
-        state.modalVisible = value
-      },
+  // State > Photo Submissions
+  photoSource: null,
+  selfie: {}
+})
 
-      setModalType(state, value) {
-        state.modalType = value
-      },
+export const mutations = {
+  // Mutations > Modal
+  setModalVisibility(state, value) {
+    state.modalVisible = value
+  },
 
-      setModalData(state, value) {
-        state.modalData = value
-      },
+  setModalType(state, value) {
+    state.modalType = value
+  },
 
-      // Mutations > Map
-      setMapZoom(state, value) {
-        state.map.zoom = value
-      },
+  setModalData(state, value) {
+    state.modalData = value
+  },
 
-      setMapCurrentPin(state, value) {
-        state.map.currentPin = value
-      },
+  // Mutations > Map
+  setMapZoom(state, value) {
+    state.map.zoom = value
+  },
 
-      // Mutations > Petition Form Fields
-      setName(state, value) {
-        state.name = value
-      },
+  setMapCurrentPin(state, value) {
+    state.map.currentPin = value
+  },
 
-      setEmail(state, value) {
-        state.email = value
-      },
+  // Mutations > Petition Form Fields
+  setName(state, value) {
+    state.name = value
+  },
 
-      setAddress(state, value) {
-        state.address = value
-      },
+  setEmail(state, value) {
+    state.email = value
+  },
 
-      setZipCode(state, value) {
-        state.zipCode = value
-      },
+  setAddress(state, value) {
+    state.address = value
+  },
 
-      setPhone(state, value) {
-        state.phone = value
-      },
+  setZipCode(state, value) {
+    state.zipCode = value
+  },
 
-      // Mutations > Photo Gallery & Submissions
-      setPhotoSource(state, value) {
-        state.photoSource = value
-      },
+  setPhone(state, value) {
+    state.phone = value
+  },
 
-      setSelfie(state, value) {
-        state.selfie = value
-      },
+  // Mutations > Photo Gallery & Submissions
+  setPhotoSource(state, value) {
+    state.photoSource = value
+  },
 
-      setSelfies(state, value) {
-        state.selfies = value
-        state.selfiesCurPageNum = 1
-      },
+  setSelfie(state, value) {
+    state.selfie = value
+  },
 
-      addSelfies(state, value) {
-        state.selfies.data = state.selfies.data.concat(value.data)
-        state.selfies.pages = value.pages
-      },
+  setSelfies(state, value) {
+    state.selfies = value
+    state.selfiesCurPageNum = 1
+  },
 
-      setSelfiesCurPageNum(state, value) {
-        state.selfiesCurPageNum = value
-      }
-    },
-    actions: {
-      // Actions > Photo Gallery
-      async getSelfies({ commit, state }, query) {
-        let q = ''
-        if (query && query.page) {
-          q = `-page${query.page}`
-        } else if (query && query.state) {
-          q = `-${query.state}`
-        }
+  addSelfies(state, value) {
+    state.selfies.data = state.selfies.data.concat(value.data)
+    state.selfies.pages = value.pages
+  },
 
-        try {
-          // TODO: genericize URL or change per project
-          const { data } = await this.$axios.get(`https://data.battleforthenet.com/deadline/selfies${q}.json`)
-          if (query && query.page > 1) {
-            commit('addSelfies', data)
-          } else {
-            commit('setSelfies', data)
-          }
-        } catch (error) {
-          console.log('Something went wrong with fetching the selfies')
-        }
-      },
-
-      openSelfieModal({ commit, state }, selfie) {
-        commit('setModalVisibility', true)
-        commit('setModalType', 'selfie')
-        commit('setModalData', selfie)
-      }
-    }
-  })
+  setSelfiesCurPageNum(state, value) {
+    state.selfiesCurPageNum = value
+  }
 }
 
-export default createStore
+export const actions = {
+  // Actions > Photo Gallery
+  async getSelfies({ commit, state }, query) {
+    let q = ''
+    if (query && query.page) {
+      q = `-page${query.page}`
+    } else if (query && query.state) {
+      q = `-${query.state}`
+    }
+
+    try {
+      // TODO: genericize URL or change per project
+      const { data } = await this.$axios.get(`https://data.battleforthenet.com/deadline/selfies${q}.json`)
+      if (query && query.page > 1) {
+        commit('addSelfies', data)
+      } else {
+        commit('setSelfies', data)
+      }
+    } catch (error) {
+      console.log('Something went wrong with fetching the selfies')
+    }
+  },
+
+  openSelfieModal({ commit, state }, selfie) {
+    commit('setModalVisibility', true)
+    commit('setModalType', 'selfie')
+    commit('setModalData', selfie)
+  }
+}
