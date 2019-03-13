@@ -14,46 +14,51 @@
 </style>
 
 <template>
-  <no-ssr>
-    <div class="politicians">
-      <div class="flex-grid sml-flex-row">
-        <div class="sml-pad-1 fill-warn">Against</div>
-        <div class="sml-pad-1 fill-success">Supports</div>
-        <div class="sml-pad-1 fill-grey">No Stance</div>
-      </div> <!-- .flex-grid -->
+  <div>
+    <ScoreboardForm />
+    <no-ssr>
+      <div class="politicians sml-push-y2 med-push-y4">
+        <div class="flex-grid sml-flex-row">
+          <div class="sml-pad-1 fill-warn">Against</div>
+          <div class="sml-pad-1 fill-success">Supports</div>
+          <div class="sml-pad-1 fill-grey">No Stance</div>
+        </div> <!-- .flex-grid -->
 
-      <select v-model="selectedState" class="sml-push-y2 med-push-y3">
-        <option :value="null">Selected state</option>
-        <option v-for="(name, code) in states" :key="code" :value="code">{{ name }}</option>
-      </select>
+        <select v-model="selectedState" class="sml-push-y2 med-push-y3">
+          <option :value="null">Selected state</option>
+          <option v-for="(name, code) in states" :key="code" :value="code">{{ name }}</option>
+        </select>
 
-      <div v-if="politicians.length > 0" class="fade-in sml-push-y2">
-        <div v-for="rep in politicians"
-             :key="`rep-${rep.bioguide_id}`"
-             class="rep">
-          <nuxt-link :to="`/scoreboard/${rep.bioguide_id}`" class="rep-link">
-            <ScoreboardRep :rep="rep" />
-            <div class="btn btn-sml btn-block sml-push-y-half">View</div>
-          </nuxt-link>
-        </div> <!-- .rep -->
-      </div> <!-- v-if -->
-      <div v-else-if="selectedState && !isLoading">
-        <h3>No politicians found</h3>
-      </div> <!-- v-else-if -->
-      <p class="sml-push-y2 med-push-y3">
-        <a href="#TODO" class="btn">View all</a>
-      </p>
-    </div> <!-- .politicians -->
-  </no-ssr>
+        <div v-if="politicians.length > 0" class="fade-in sml-push-y2">
+          <div v-for="rep in politicians"
+               :key="`rep-${rep.bioguide_id}`"
+               class="rep">
+            <nuxt-link :to="`/scoreboard/${rep.bioguide_id}`" class="rep-link">
+              <ScoreboardRep :rep="rep" />
+              <div class="btn btn-sml btn-block sml-push-y-half">View</div>
+            </nuxt-link>
+          </div> <!-- .rep -->
+        </div> <!-- v-if -->
+        <div v-else-if="selectedState && !isLoading">
+          <h3>No politicians found</h3>
+        </div> <!-- v-else-if -->
+        <p class="sml-push-y2 med-push-y3">
+          <a href="#TODO" class="btn">View all</a>
+        </p>
+      </div> <!-- .politicians -->
+    </no-ssr>
+  </div>
 </template>
 
 <script>
 import { geocodeState } from '~/assets/js/helpers'
 import US_STATES from '~/assets/data/states.json'
+import ScoreboardForm from '~/components/ScoreboardForm'
 import ScoreboardRep from '~/components/ScoreboardRep'
 
 export default {
   components: {
+    ScoreboardForm,
     ScoreboardRep
   },
 
