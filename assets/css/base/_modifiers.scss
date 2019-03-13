@@ -13,11 +13,14 @@
   border-bottom-right-radius: $default-border-radius;
   border-bottom-left-radius:  $default-border-radius;
 }
-// .with-border {
-//   border: 1px solid $grey-light-color;
-// }
+.with-border {
+  border: 1px solid $grey-light-color;
+}
 .with-border-bottom {
   border-bottom: 1px solid $grey-light-color;
+}
+.with-border-top {
+  border-top: 1px solid $grey-light-color;
 }
 
 // Modifiers > Fills
@@ -34,6 +37,18 @@
 .fill-white {
   background: $white;
 }
-// .fill-brand {
-//   background: $brand-color;
-// }
+.fill-black {
+  background: $black;
+}
+.fill-brand {
+  background: $brand-color;
+}
+.fill-brand-dark {
+  background: $brand-dark-color;
+}
+.fill-success {
+  background: $success-color;
+}
+.fill-warn {
+  background: $warn-color;
+}
