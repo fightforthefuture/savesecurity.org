@@ -312,8 +312,13 @@ export default {
       modifierClasses: [
         '',
         'fill-white',
+        'fill-grey-light',
         'fill-grey',
+        'fill-grey-dark',
+        'fill-black',
         'fill-brand',
+        'fill-success',
+        'fill-warn',
         'with-border',
         'with-border-bottom',
         'with-border-top',

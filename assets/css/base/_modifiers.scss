@@ -33,12 +33,14 @@
 }
 .fill-grey-dark {
   background: $grey-dark-color;
+  color: $white;
 }
 .fill-white {
   background: $white;
 }
 .fill-black {
   background: $black;
+  color: $white;
 }
 .fill-brand {
   background: $brand-color;
@@ -48,7 +50,9 @@
 }
 .fill-success {
   background: $success-color;
+  color: $white;
 }
 .fill-warn {
   background: $warn-color;
+  color: $white;
 }
