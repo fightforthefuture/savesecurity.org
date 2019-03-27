@@ -76,7 +76,7 @@
           you enter your number (it&rsquo;s optional) we will follow up by SMS.
           Message &amp; data rates apply. You can always text STOP to stop
           receiving messages.
-          <a href="https://www.battleforthenet.com/privacy/" target="_blank">
+          <a href="https://www.fightforthefuture.org/privacy/" target="_blank">
             Privacy Policy
           </a>
         </small>
