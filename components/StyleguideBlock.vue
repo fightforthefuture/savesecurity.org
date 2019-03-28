@@ -4,6 +4,7 @@
   background: $white;
   border: 1px solid $grey-color;
   border-radius: $default-border-radius;
+  color: $grey-dark-color;
   font-family: monospace;
 }
 </style>
