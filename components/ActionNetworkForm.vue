@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <div class="text-center sml-push-y2 med-push-y3">
+  <div class="sml-push-y2 med-push-y3">
+    <div class="text-center">
       <div v-if="hasSigned">
-        <p>
-          Thanks for signing the petition! Please consider sharing with your
-          friends and family.
+        <h2 class="text-success">Thanks for signing the petition!</h2>
+        <p class="sml-push-y1">
+          Please consider sharing with your friends and family.
         </p>
         <div class="row sml-push-y2 med-push-y3">
           <div class="sml-c12 lrg-c4">
@@ -31,12 +31,9 @@
             </a>
           </div> <!-- .c -->
         </div> <!-- .row -->
-      </div>
-      <p v-else>
-        Enter your information below to sign the petition.
-      </p>
+      </div> <!-- v-if -->
     </div> <!-- .push -->
-    <form v-if="!hasSigned" class="sml-push-y2 med-push-y3"
+    <form v-if="!hasSigned"
           @submit.prevent="submitForm()">
       <p v-if="errorMessage" class="text-warn">
         {{ errorMessage }}
@@ -71,7 +68,7 @@
           Take action
         </span>
       </button>
-      <p class="sml-push-y1">
+      <p class="sml-push-y1 text-center">
         <small>
           <a href="https://www.fightforthefuture.org/" target="_blank">
             Fight for the Future
