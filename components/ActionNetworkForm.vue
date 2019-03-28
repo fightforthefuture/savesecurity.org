@@ -58,6 +58,10 @@
                class="sml-flex-2"
                placeholder="Phone # (for text list)">
       </div> <!-- .flex-grid -->
+      <div class="sml-push-y1 textarea-with-btn">
+        <textarea v-model="comment" ref="comment" required></textarea>
+        <a class="btn btn-sml btn-alt" @click.prevent="clearComment()">Clear</a>
+      </div> <!-- .textarea-with-btn -->
 
       <button class="btn btn-block sml-push-y1" :disabled="isSending">
         <span v-if="isSending">
@@ -99,7 +103,8 @@ export default {
     return {
       isSending: false,
       hasSigned: false,
-      errorMessage: null
+      errorMessage: null,
+      comment: null
     }
   },
 
@@ -152,6 +157,10 @@ export default {
     }
   },
 
+  created() {
+    this.comment = this.$store.state.letterText
+  },
+
   methods: {
     async submitForm() {
       if (this.isSending) return
@@ -174,8 +183,8 @@ export default {
           // contact_congress: 1, // TODO: Optional
           // fcc_ecfs_docket: "17-108", // TODO: Optional
           an_tags: '["net-neutrality"]',
-          an_petition_id: this.$store.state.anPetitionId
-          // action_comment: TODO add if desired
+          an_petition_id: this.$store.state.anPetitionId,
+          action_comment: this.comment // TODO: remove if desired
         })
 
         this.$trackEvent('petition_form', 'submit')

@@ -81,6 +81,16 @@ button.btn {
   cursor: default;
 }
 
+// Buttons > Alt
+.btn.btn-alt {
+  background: $grey-light-color;
+  color: $grey-color;
+}
+.btn.btn-alt:hover,
+.btn.btn-alt:focus {
+  color: $grey-dark-color;
+}
+
 // Buttons > Sharing
 .btn.btn-twitter {
   background-color: $twitter-color;

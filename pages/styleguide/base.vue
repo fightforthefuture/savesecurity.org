@@ -330,6 +330,7 @@ export default {
         '',
         'btn-block',
         'btn-sml',
+        'btn-alt',
         'btn-twitter',
         'btn-facebook',
         'btn-disabled'
