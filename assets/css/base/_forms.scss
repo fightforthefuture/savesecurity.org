@@ -80,6 +80,19 @@ form textarea.error:focus{
   border-color: $warn-color;
 }
 
+// Forms > Text Inputs & Textareas > Textarea with button
+form .textarea-with-btn {
+  position: relative;
+}
+form .textarea-with-btn textarea {
+  padding-right: $gutter*10; // NOTE: magic number based on length of button text
+}
+form .textarea-with-btn .btn {
+  position: absolute;
+  top:   $gutter;
+  right: $gutter*2;
+}
+
 // Form > Selects
 select {
   width: 100%;

@@ -45,9 +45,14 @@ button.btn {
 // Button > with image
 .btn img {
   display: inline-block;
-  max-height: $m-font-size-2 * $base-line-height;
+  height: $m-font-size-2 * $base-line-height;
   width: auto;
-  margin-right: $gutter;
+  // TODO: can add margin on left or right depending on placement
+  vertical-align: top;
+
+  @include respond-to(lrg) {
+    height: $font-size-2 * $base-line-height;
+  }
 }
 
 // Buttons > Block
@@ -79,6 +84,16 @@ button.btn {
 .btn.btn-disabled:focus, {
   background: $grey-color;
   cursor: default;
+}
+
+// Buttons > Alt
+.btn.btn-alt {
+  background: $grey-light-color;
+  color: $grey-color;
+}
+.btn.btn-alt:hover,
+.btn.btn-alt:focus {
+  color: $grey-dark-color;
 }
 
 // Buttons > Sharing

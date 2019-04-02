@@ -37,6 +37,7 @@
 }
 .fill-white {
   background: $white;
+  color: $grey-dark-color; // TODO: update if page has a light background and this is not the text color
 }
 .fill-black {
   background: $black;

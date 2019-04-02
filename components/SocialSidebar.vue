@@ -31,7 +31,7 @@
     img {
       position: absolute;
       right: 15px;
-      top: 5px;
+      top: 10px;
     }
 
     &:hover {
