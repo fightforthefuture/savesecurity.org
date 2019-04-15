@@ -23,7 +23,7 @@
 
 <script>
 import { geocodeState } from '~/assets/js/helpers'
-import US_STATES from '~/data/states.json'
+import US_STATES from '~/assets/data/states.json'
 
 export default {
   data() {

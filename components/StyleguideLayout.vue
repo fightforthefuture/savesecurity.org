@@ -72,6 +72,9 @@
               <nuxt-link to="/styleguide/Map">Map</nuxt-link>
             </li>
             <li>
+              <nuxt-link to="/styleguide/Scoreboard">Scoreboard</nuxt-link>
+            </li>
+            <li>
               <nuxt-link to="/styleguide/SelfieForm">SelfieForm</nuxt-link>
             </li>
             <li>
