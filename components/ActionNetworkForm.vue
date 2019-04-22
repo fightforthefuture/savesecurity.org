@@ -200,6 +200,11 @@ export default {
       }
     },
 
+    clearComment() {
+      this.comment = ''
+      this.$refs.comment.focus()
+    },
+
     startTextFlow() {
       startTextFlow({
         opt_in_path: this.$store.state.textFlowId,
