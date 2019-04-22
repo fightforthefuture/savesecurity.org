@@ -75,7 +75,7 @@
 }
 
 // Spacing > Padding-Y-Top
-@for $i from 1 through 6 {
+@for $i from 0 through 6 {
   .sml-pad-y-top#{$i} {
     padding-top:    $gutter * ($i);
   }
