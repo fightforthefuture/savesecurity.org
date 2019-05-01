@@ -1,13 +1,5 @@
+<i18n src="~/locales/global.yml"></i18n>
+
 <template>
-  <h2>{{ title }}</h2>
+  <h2>{{ $t('global.site_title') }}</h2>
 </template>
-
-<script>
-import config from '~/config'
-
-export default {
-  computed: {
-    title() { return config.siteTitle }
-  }
-}
-</script>

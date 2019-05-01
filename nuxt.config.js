@@ -10,8 +10,7 @@ module.exports = {
     title: config.siteTitle,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: config.sharing.description }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -66,7 +65,21 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['nuxt-i18n', {
+      locales: [
+        {
+          code: 'en',
+          iso: 'en-US'
+        }
+      ],
+      parsePages: false,
+      defaultLocale: 'en',
+      vueI18n: {
+        fallbackLocale: 'en'
+      },
+      vueI18nLoader: true
+    }]
   ],
   /*
   ** Axios module configuration
@@ -97,6 +110,12 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+      // Parse yaml in i18n blocks
+      config.module.rules.push({
+        resourceQuery: /blockType=i18n/,
+        type: "javascript/auto",
+        loader: ["@kazupon/vue-i18n-loader", "yaml-loader"]
+      })
     }
   },
   vendor: [

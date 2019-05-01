@@ -1,3 +1,5 @@
+<i18n src="~/locales/global.yml"></i18n>
+
 <template>
   <div>
     <nuxt />
@@ -12,7 +14,6 @@
 </template>
 
 <script>
-import config from '~/config'
 import { mapState } from 'vuex'
 import { createMetaTags } from '~/assets/js/helpers'
 import Modal from '~/components/Modal'
@@ -32,13 +33,13 @@ export default {
 
   head() {
     return {
-      title: config.siteTitle,
+      title: this.$t('global.site_title'),
       meta: createMetaTags({
-        siteName: config.siteTitle,
-        title: config.sharing.title,
-        description: config.sharing.description,
-        image: config.sharing.image,
-        url: config.sharing.url
+        siteName: this.$t('global.site_title'),
+        title: this.$t('global.sharing.title'),
+        description: this.$t('global.sharing.description'),
+        image: this.$t('global.sharing.image'),
+        url: this.$t('global.sharing.url')
       })
     }
   },

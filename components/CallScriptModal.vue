@@ -1,3 +1,5 @@
+<i18n src="~/locales/components/CallScriptModal.yml"></i18n>
+
 <style lang="scss" scoped>
   .icon-call {
     max-height: $font-size-2*1.2;
@@ -13,10 +15,10 @@
       <h2>
         <img src="~/assets/images/call-icon.svg" alt="Phone icon"
              class="img-inline icon-call">
-        Calling you now&hellip;
+        {{ $t('calling_now') }}
       </h2>
       <p class="sml-push-y1">
-        <strong>Introduce yourself, be polite, and say:</strong>
+        <strong>{{ $t('script_intro') }}</strong>
       </p>
       <p class="text-meta">
         {{ callScript }}
@@ -25,14 +27,12 @@
         <p>
           <img src="~/assets/images/warning-icon.svg" alt="!"
                class="img-inline icon-warning">
-          If lines are busy, we may call you in a few minutes.
+          {{ $t('if_busy') }}
         </p>
       </div> <!-- .pad -->
     </div> <!-- .with-border-bottom -->
 
-    <h4 class="sml-push-y2">
-      Done calling? Do these things, too!
-    </h4>
+    <h4 class="sml-push-y2">{{ $t('done_calling') }}</h4>
     <SocialShareButtons class="sml-push-y2" />
   </div>
 </template>

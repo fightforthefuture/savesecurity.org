@@ -1,3 +1,5 @@
+<i18n src="~/locales/global.yml"></i18n>
+
 <style lang="scss" scoped>
 // Quotes
 .quotes-wrapper {
@@ -47,7 +49,9 @@
 <template>
   <div class="quotes-wrapper flex-grid sml-flex-row flex-center text-center">
     <a class="arrow" @click.prevent="prev">
-      <img src="~assets/images/arrow-left.svg" alt="Previous" class="grid-center">
+      <img src="~assets/images/arrow-left.svg"
+           :alt="$t('global.common.previous')"
+           class="grid-center">
     </a>
     <transition name="fade" mode="out-in">
       <div :key="`slide-${activeSlide}`" class="sml-pad-x1">
@@ -58,7 +62,9 @@
       </div>
     </transition>
     <a class="arrow" @click.prevent="next">
-      <img src="~assets/images/arrow-right.svg" alt="Next" class="grid-center">
+      <img src="~assets/images/arrow-right.svg"
+           :alt="$t('global.common.next')"
+           class="grid-center">
     </a>
   </div> <!-- .quotes-wrapper -->
 </template>
