@@ -18,7 +18,7 @@
         <span v-if="!selfie.website">{{ selfie.name }}</span>
         <span v-if="selfie.description">, {{ selfie.description }}</span>
         <span v-if="selfie.location">
-          {{ $t('global.common.from' )}} {{ selfie.location }}
+          {{ $t('global.common.from') }} {{ selfie.location }}
         </span>
       </strong>
     </p>

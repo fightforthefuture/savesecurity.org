@@ -1,3 +1,5 @@
+<i18n src="~/locales/components/Scoreboard.yml"></i18n>
+
 <style lang="scss" scoped>
 .politicians {
   text-align: center;
@@ -19,31 +21,37 @@
     <no-ssr>
       <div class="politicians sml-push-y2 med-push-y4">
         <div class="flex-grid sml-flex-row">
-          <div class="sml-pad-1 fill-warn">Against</div>
-          <div class="sml-pad-1 fill-success">Supports</div>
-          <div class="sml-pad-1 fill-grey">No Stance</div>
+          <div class="sml-pad-1 fill-warn">{{ $t('against') }}</div>
+          <div class="sml-pad-1 fill-success">{{ $t('supports') }}</div>
+          <div class="sml-pad-1 fill-grey">{{ $t('no_stance') }}</div>
         </div> <!-- .flex-grid -->
 
         <select v-model="selectedState" class="sml-push-y2 med-push-y3">
-          <option :value="null">Selected state</option>
-          <option v-for="(name, code) in states" :key="code" :value="code">{{ name }}</option>
+          <option :value="null">{{ $t('select_state') }}</option>
+          <option v-for="(name, code) in states" :key="code" :value="code">
+            {{ name }}
+          </option>
         </select>
 
         <div v-if="politicians.length > 0" class="fade-in sml-push-y2">
           <div v-for="rep in politicians"
                :key="`rep-${rep.bioguide_id}`"
                class="rep">
-            <nuxt-link :to="`/scoreboard/${rep.bioguide_id}`" class="rep-link">
+            <nuxt-link
+                :to="localePath({ name: 'scoreboard-id', params: { id: rep.bioguide_id } })"
+                class="rep-link">
               <ScoreboardRep :rep="rep" />
-              <div class="btn btn-sml btn-block sml-push-y-half">View</div>
+              <div class="btn btn-sml btn-block sml-push-y-half">
+                {{ $t('view') }}
+              </div>
             </nuxt-link>
           </div> <!-- .rep -->
         </div> <!-- v-if -->
         <div v-else-if="selectedState && !isLoading">
-          <h3>No politicians found</h3>
+          <h3>{{ $t('no_results') }}</h3>
         </div> <!-- v-else-if -->
         <p class="sml-push-y2 med-push-y3">
-          <a href="#TODO" class="btn">View all</a>
+          <a href="#TODO" class="btn">{{ $t('view_all') }}</a>
         </p>
       </div> <!-- .politicians -->
     </no-ssr>
