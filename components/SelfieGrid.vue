@@ -1,8 +1,10 @@
+<i18n src="~/locales/components/SelfieGrid.yml"></i18n>
+
 <template>
   <div>
     <div v-if="selfies && selfies.data.length === 0">
       <h4 class="text-center sml-push-y2 med-push-y4">
-        Sorry, we didn&rsquo;t find any selfies that match your search
+        {{ $t('no_results') }}
       </h4>
     </div>
     <div v-if="selfies">
@@ -20,11 +22,10 @@
 
       <div class="sml-push-y2 text-center">
         <a v-if="!isEndOfFeed" class="btn" @click="loadMore">
-          Load More
+          {{ $t('load_more') }}
         </a>
         <p v-else class="text-brand-light">
-          You&rsquo;ve reached the end of the feed, but there are still millions
-          more people fighting for Net Neutrality across the country.
+          {{ $t('end_of_feed') }}
         </p>
       </div> <!-- .push -->
     </div> <!-- v-if -->

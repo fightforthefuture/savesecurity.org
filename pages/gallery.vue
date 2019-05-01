@@ -1,13 +1,16 @@
+<i18n src="~/locales/pages/gallery.yml"></i18n>
+
 <template>
   <GalleryLayout>
     <div class="site-content">
       <section class="sml-pad-y5">
         <div class="wrapper">
           <div class="sml-c12 grid-center text-center">
-            <h1>We support Net Neutrality</h1>
-            <a href="/" class="btn sml-push-y1 med-push-y2">
-              <img src="/photo.svg" class="med-push-y-half">Take your photo
-            </a>
+            <h1>{{ $t('page_title') }}</h1>
+            <nuxt-link :to="localePath('index')" class="btn sml-push-y1 med-push-y2">
+              <img src="/photo.svg" class="med-push-y-half">
+              {{ $t('photo_button_cta') }}
+            </nuxt-link>
           </div> <!-- .c -->
 
           <SelfieGrid />
@@ -29,7 +32,7 @@ export default {
 
   head() {
     return {
-      titleTemplate: '%s - Gallery',
+      titleTemplate: `%s - ${this.$t('page_title')}`,
       bodyAttrs: {
         class: 'full-width'
       }

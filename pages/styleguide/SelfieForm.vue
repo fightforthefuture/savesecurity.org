@@ -6,7 +6,7 @@
       <SelfieForm />
 
       <p class="text-center sml-push-y2 med-push-y3">
-        <nuxt-link to="/gallery">
+        <nuxt-link :to="localePath('gallery')">
           View the gallery
         </nuxt-link>
       </p>
