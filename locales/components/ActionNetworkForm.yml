@@ -27,7 +27,6 @@ en:
     company: Company
     comment: Comment*
     button_cta: Sign the Petition
-    error: Sorry, that didn’t work for some reason. Please try again.
   thanks:
     title: Thanks for signing the petition!
     share: Please consider sharing with your friends and family.

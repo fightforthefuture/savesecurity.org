@@ -283,7 +283,7 @@ export default {
         }
       } catch (err) {
         this.isSending = false
-        this.errorMessage = this.$t('error')
+        this.errorMessage = this.$t('global.common.error')
       }
     },
 

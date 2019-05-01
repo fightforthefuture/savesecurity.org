@@ -16,6 +16,8 @@ en:
       # In Alphabetical Order
       clear: Clear
       donate: Donate
+      error: Sorry, that didn’t work for some reason. 😞 Please try again.
+      from: from
       logo_alt: Fight for the Future logo
       next: Next
       previous: Previous
