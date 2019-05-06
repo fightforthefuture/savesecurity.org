@@ -1,33 +1,35 @@
+<i18n src="~/locales/components/ActionNetworkForm.yml"></i18n>
+<i18n src="~/locales/global.yml"></i18n>
+
 <template>
   <div class="sml-push-y2 med-push-y3">
     <div class="text-center">
       <div v-if="hasSigned">
-        <h2 class="text-success">Thanks for signing the petition!</h2>
-        <p class="sml-push-y1">
-          Please consider sharing with your friends and family.
-        </p>
+        <h2 class="text-success">{{ $t('thanks.title') }}</h2>
+        <p class="sml-push-y1">{{ $t('thanks.share') }}</p>
         <div class="row sml-push-y2 med-push-y3">
           <div class="sml-c12 lrg-c4">
             <ShareButton
               network="twitter"
               class="btn-block"
-              @click.native="$trackClick('twitter_share_button_success')">
-              <span>Tweet</span>
+              :text="tweetText"
+              @click.native="$trackClick(`twitter_share_button_success_${routeName}`)">
+              <span>{{ $t('global.common.tweet') }}</span>
             </ShareButton>
           </div> <!-- .c -->
           <div class="sml-c12 lrg-c4 sml-push-y1 lrg-push-y0">
             <ShareButton
               network="facebook"
               class="btn-block"
-              @click.native="$trackClick('facebook_share_button_sucess')">
-              <span>Share</span>
+              @click.native="$trackClick(`facebook_share_button_sucess_${routeName}`)">
+              <span>{{ $t('global.common.share') }}</span>
             </ShareButton>
           </div> <!-- .c -->
           <div class="sml-c12 lrg-c4 sml-push-y1 lrg-push-y0">
             <a :href="donateUrl"
-               class="btn btn-block"
-               @click="$trackClick('donate_button_success')">
-              Donate
+               class="btn btn-block btn-bright"
+               @click="$trackClick(`donate_button_success_${routeName}`)">
+              <span>{{ $t('global.common.donate') }}</span>
             </a>
           </div> <!-- .c -->
         </div> <!-- .row -->
@@ -39,48 +41,44 @@
         {{ errorMessage }}
       </p>
       <div class="flex-grid sml-flex-row">
-        <input v-model="name" type="text" placeholder="Name*" required>
-        <input v-model="email" type="email" placeholder="Email*" required>
+        <input v-model="name" type="text" :placeholder="$t('form.name')" required>
+        <input v-model="email" type="email" :placeholder="$t('form.email')" required>
       </div> <!-- .flex-grid -->
       <div class="flex-grid sml-flex-row sml-push-y1">
         <input v-model="address"
                type="text"
                class="sml-flex-2"
-               placeholder="Address">
+               :placeholder="$t('form.address')">
         <input v-model="zipCode"
                type="tel"
-               placeholder="ZIP">
+               :placeholder="$t('form.zip')"
+               required>
         <input v-model.trim="phone"
                type="tel"
                class="sml-flex-2"
-               placeholder="Phone # (for text list)">
+               :placeholder="$t('form.phone')">
       </div> <!-- .flex-grid -->
-      <div class="sml-push-y1 textarea-with-btn">
-        <textarea v-model="comment" ref="comment" required></textarea>
-        <a class="btn btn-sml btn-alt" @click.prevent="clearComment()">Clear</a>
+      <div v-if="hasCompany" class="sml-push-y1">
+        <input v-model="companyName" type="text" :placeholder="$t('form.company')">
+      </div>
+      <div v-if="hasComment" class="sml-push-y1 textarea-with-btn">
+        <textarea
+          v-model="comment"
+          ref="comment"
+          :placeholder="$t('form.comment')"
+          required>
+        </textarea>
+        <a class="btn btn-sml btn-alt" @click.prevent="clearComment()">
+          {{ $t('global.common.clear') }}
+        </a>
       </div> <!-- .textarea-with-btn -->
 
-      <button class="btn btn-block sml-push-y1" :disabled="isSending">
-        <span v-if="isSending">
-          Sending...
-        </span>
-        <span v-else>
-          Take action
-        </span>
+      <button class="btn btn-block btn-bright sml-push-y1" :disabled="isSending">
+        <span v-if="isSending">{{ $t('global.common.sending') }}</span>
+        <span v-else>{{ buttonText }}</span>
       </button>
       <p class="sml-push-y1 text-center">
-        <small>
-          <a href="https://www.fightforthefuture.org/" target="_blank">
-            Fight for the Future
-          </a>
-          will email you updates, and you can unsubscribe at any time. If
-          you enter your number (it&rsquo;s optional) we will follow up by SMS.
-          Message &amp; data rates apply. You can always text STOP to stop
-          receiving messages.
-          <a href="https://www.fightforthefuture.org/privacy/" target="_blank">
-            Privacy Policy
-          </a>
-        </small>
+        <small v-html="$t('privacy_html')"></small>
       </p>
     </form>
   </div>
@@ -96,17 +94,101 @@ export default {
     ShareButton
   },
 
+  props: {
+    anPetitionId: {
+      type: String,
+      required: false,
+      default: function () {
+        return this.$t('petition_id')
+      }
+    },
+    subject: {
+      type: String,
+      required: false,
+      default: function () {
+        return this.$t('subject')
+      }
+    },
+    contactCongress: {
+      type: Number,
+      required: false,
+      default: function () {
+        return this.$t('contact_congress').toLowerCase() === 'yes' ? 1 : 0
+      }
+    },
+    /* eslint-disable vue/require-prop-types */
+    fccDocket: {
+      required: false,
+      default: function () {
+        return this.$te('fcc_docket') ? this.$t('fcc_docket') : null
+      }
+    },
+    callpowerId: {
+      required: false,
+      default: function () {
+        return this.$te('callpower_id') ? this.$t('callpower_id') : null
+      }
+    },
+    /* eslint-enable vue/require-prop-types */
+    tags: {
+      type: Object,
+      required: false,
+      default: function () {
+        return this.$t('tags')
+      }
+    },
+    textFlowId: {
+      type: String,
+      required: false,
+      default: function () {
+        return this.$t('text_flow_id')
+      }
+    },
+    callScript: {
+      type: String,
+      required: false,
+      default: function () {
+        return this.$t('global.call_script')
+      }
+    },
+    buttonText: {
+      type: String,
+      required: false,
+      default: function () {
+        return this.$t('form.button_cta')
+      }
+    },
+    hasComment: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    hasCompany: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    tweetText: {
+      type: String,
+      required: false,
+      default: null
+    }
+  },
+
   data() {
     return {
       isSending: false,
       hasSigned: false,
       errorMessage: null,
-      comment: null
+      comment: null,
+      companyName: null
     }
   },
 
   computed: {
     ...mapState(['donateUrl']),
+
+    routeName() { return this.$nuxt.$route.name },
 
     name: {
       get() {
@@ -155,7 +237,7 @@ export default {
   },
 
   created() {
-    this.comment = this.$store.state.letterText
+    this.comment = this.$t('global.letter_text')
   },
 
   methods: {
@@ -166,28 +248,33 @@ export default {
 
       try {
         const response = await sendToMothership({ // eslint-disable-line no-unused-vars
-          subject: 'TODO: subject',
+          subject: this.subject,
           member: {
             first_name: this.name,
             email: this.email,
             phone_number: this.phone,
             street_address: this.address,
             postcode: this.zipCode,
-            country: 'US'
+            country: 'US',
+            company: this.companyName
           },
           hp_enabled: 'true',
           guard: '',
-          // contact_congress: 1, // TODO: Optional
-          // fcc_ecfs_docket: "17-108", // TODO: Optional
-          an_tags: '["net-neutrality"]',
-          an_petition_id: this.$store.state.anPetitionId,
-          action_comment: this.comment // TODO: remove if desired
+          contact_congress: this.contactCongress,
+          fcc_ecfs_docket: this.fccDocket,
+          an_tags: JSON.stringify(Object.values(this.tags)),
+          an_petition_id: this.anPetitionId,
+          action_comment: this.hasComment ? this.comment : ''
         })
 
-        this.$trackEvent('petition_form', 'submit')
-        // TODO: Optional, enable callpower campaign after-action
-        // this.$store.commit('setModalVisibility', true)
-        // this.$store.commit('setModalType', 'call-form')
+        this.$trackEvent(`petition_form_${this.routeName}`, 'submit')
+
+        if (this.callpowerId) {
+          this.$store.commit('setCallpowerCampaignId', this.callpowerId)
+          this.$store.commit('setCallScript', this.callScript)
+          this.$store.commit('setModalVisibility', true)
+          this.$store.commit('setModalType', 'call-form')
+        }
         this.isSending = false
         this.hasSigned = true
 
@@ -196,7 +283,7 @@ export default {
         }
       } catch (err) {
         this.isSending = false
-        this.errorMessage = 'Sorry, that didn’t work for some reason. Please try again.'
+        this.errorMessage = this.$t('global.common.error')
       }
     },
 
@@ -207,7 +294,7 @@ export default {
 
     startTextFlow() {
       startTextFlow({
-        opt_in_path: this.$store.state.textFlowId,
+        opt_in_path: this.textFlowId,
         phone: this.phone,
         name: this.name,
         email: this.email,

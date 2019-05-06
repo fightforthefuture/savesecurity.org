@@ -1,3 +1,6 @@
+<i18n src="~/locales/components/SelfieForm.yml"></i18n>
+<i18n src="~/locales/global.yml"></i18n>
+
 <style lang="scss">
 @keyframes blur-in {
   0% {
@@ -72,7 +75,7 @@
                   <a class="btn btn-block btn-sml btn-alt"
                      :disabled="isCapturing"
                      @click.prevent="openFilePicker()">
-                    <img src="/photo-upload.svg">Upload
+                    <img src="/photo-upload.svg"> {{ $t('upload_button') }}
                   </a>
                   <input v-show="false"
                          ref="fileInput"
@@ -84,22 +87,18 @@
             </div> <!-- flex column -->
             <div class="flex-grid sml-flex-col sml-push-y2 med-push-y0">
               <label class="flex-fixed-height sml-pad-1 sml-pad-x2 fill-grey-light is-rounded-top">
-                <h5>Your Net Neutrality thoughts:</h5>
+                <h5>{{ $t('comment_label') }}</h5>
               </label>
               <textarea v-model="comment" class="flat-top"
-                        placeholder="I care about Net Neutrality because..." />
+                        :placeholder="$t('comment_placeholder')" />
             </div> <!-- .flex-grid -->
           </div> <!-- .flex-grid -->
         </div> <!-- .fill -->
         <div class="sml-pad-2 fill-grey-dark is-rounded-bottom">
           <button class="btn btn-block"
                   :disabled="isSending || !photoSource">
-            <span v-if="isSending">
-              Sending...
-            </span>
-            <span v-else>
-              Submit my photo
-            </span>
+            <span v-if="isSending">{{ $t('global.common.sending') }}</span>
+            <span v-else>{{ $t('submit_button') }}</span>
           </button>
         </div> <!-- .fill -->
       </form>
@@ -131,7 +130,7 @@ export default {
       previewWidth: '',
       previewHeight: '',
       isCapturing: false,
-      captureButtonHtml: "<img src='/photo.svg'>Take Photo",
+      captureButtonHtml: `<img src='/photo.svg'> ${this.$t('take_photo')}`,
       hasWebcam: false,
       isSending: false,
       hasSubmitted: false,
@@ -191,7 +190,7 @@ export default {
       this.hasWebcam = false
       this.isCapturing = false
       this.videoStream = null
-      this.errorMessage = "Couldn't connect to camera 😞"
+      this.errorMessage = this.$t('camera_connection_error')
     },
 
     async startLiveView() {
@@ -218,7 +217,7 @@ export default {
 
         this.videoStream = stream
         this.isCapturing = true
-        this.captureButtonHtml = 'Starting...'
+        this.captureButtonHtml = this.$t('starting')
 
         // some browsers will just hang forever if your laptop is in clamshell mode
         this.timers.captureFail = setTimeout(() => {
@@ -245,7 +244,7 @@ export default {
 
     countdown(seconds) {
       if (seconds > 0) {
-        this.captureButtonHtml = `Ready in ${seconds}…`
+        this.captureButtonHtml = `${this.$t('ready_in')} ${seconds}…`
         this.playSound('countdown')
 
         this.timers.countdown = setTimeout(() => {
@@ -266,7 +265,7 @@ export default {
 
       this.isCapturing = false
       this.stopLiveView()
-      this.captureButtonHtml = "<img src='/photo-retake.svg'>Retake Photo"
+      this.captureButtonHtml = `<img src='/photo-retake.svg'> ${this.$t('retake_photo')}`
     },
 
     takePhoto() {
@@ -316,7 +315,7 @@ export default {
         this.hasSubmitted = true
       } catch (err) {
         this.isSending = false
-        this.errorMessage = 'Sorry, that didn’t work for some reason. Please try again.'
+        this.errorMessage = this.$t('global.common.error')
       }
     }
   }

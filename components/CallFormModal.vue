@@ -1,12 +1,12 @@
+<i18n src="~/locales/components/CallFormModal.yml"></i18n>
+
 <template>
   <div>
     <h2>
-      <span class="text-success">Thanks!</span> Can you call?
+      <span class="text-success">{{ $t('thanks' ) }}</span>
+      {{ $t('please_call') }}
     </h2>
-    <p class="sml-push-y1">
-      We&rsquo;ll provide you with a suggestion of what to say and connect you
-      directly with your lawmaker&rsquo;s office.
-    </p>
+    <p class="sml-push-y1">{{ $t('instructions' ) }}</p>
     <p v-if="errorMessage" class="text-warn sml-push-y2">
       {{ errorMessage }}
     </p>
@@ -16,17 +16,12 @@
       <input v-model.trim="zipCode" class="zip" type="tel"
              placeholder="ZIP Code*" required>
       <button class="btn" :disabled="isSending">
-        <span v-if="isSending">...</span>
-        <span v-else>Call</span>
+        <span v-if="isSending">{{ $t('sending' ) }}</span>
+        <span v-else>{{ $t('call' ) }}</span>
       </button>
     </form>
     <p class="sml-push-y1 text-meta">
-      <small>
-        Your number will only be used for this call and will never be shared
-        with third parties.
-        <a href="https://www.battleforthenet.com/privacy/" target="_blank">
-          Privacy Policy</a>
-      </small>
+      <small v-html="$t('privacy_html')"></small>
     </p>
   </div>
 </template>
@@ -79,12 +74,12 @@ export default {
         )
 
         this.isSending = false
-        this.$trackEvent('call_form', 'submit')
+        this.$trackEvent(`call_form_${this.$nuxt.$route.name}`, 'submit')
         // Show call script in modal
         this.$store.commit('setModalType', 'call-script')
       } catch (err) {
         this.isSending = false
-        this.errorMessage = "Sorry, that didn't work. Please check your info and try again."
+        this.errorMessage = this.$t('error')
       }
     }
   }

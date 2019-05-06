@@ -2,12 +2,9 @@ import config from '~/config'
 
 export const state = () => ({
   // State > Config
-  anPetitionId: config.actionNetworkPetitionId,
   callpowerCampaignId: config.callpowerCampaignId,
-  textFlowId: config.textFlowId,
   donateUrl: config.donateUrl,
   callScript: config.callScript,
-  letterText: config.letterText,
   isArchived: config.isArchived,
 
   // State > Modal
@@ -80,6 +77,15 @@ export const mutations = {
 
   setPhone(state, value) {
     state.phone = value
+  },
+
+  // Mutations > Calls
+  setCallpowerCampaignId(state, value) {
+    state.callpowerCampaignId = value
+  },
+
+  setCallScript(state, value) {
+    state.callScript = value
   },
 
   // Mutations > Photo Gallery & Submissions

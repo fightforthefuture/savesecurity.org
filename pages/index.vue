@@ -1,24 +1,18 @@
+<i18n src="~/locales/pages/index.yml"></i18n>
+
 <template>
   <DefaultLayout>
     <section class="sml-pad-y3 med-pad-y6 sml-pad-y-top2">
       <div class="wrapper">
         <div class="row">
           <div class="sml-c12 lrg-c8 grid-center text-center">
-            <p>
-              Sub heading goes here, lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. In nibh libero, venenatis sed justo eu,
-              sollicitudin sollicitudin nisi. Integer semper tortor orci,
-              id ultricies velit laoreet in. Vestibulum sit amet ante vel risus
-              ornare ultrices sed id leo.
-            </p>
-            <a class="btn btn-block sml-push-y2 med-push-y3" href="#TODO">
-              Call to action
-            </a>
+            <p>{{ $t('intro') }}</p>
 
-            <ul class="hoz sml-push-y2 med-push-y3">
+            <ul class="hoz text-center sml-push-y3 med-push-y4">
               <li>
                 <a @click.prevent="scrollTo('#sign')">
-                  Sign the petition
+                  <img src="~assets/images/arrow-down.svg"
+                       :alt="$t('scroll_down')" />
                 </a>
               </li>
             </ul>
@@ -31,41 +25,30 @@
       <div class="wrapper">
         <div class="row">
           <div class="sml-c12 lrg-c8 grid-center text-center">
-            <h2>Sign the petition</h2>
+            <h2>{{ $t('sign_title') }}</h2>
+            <p class="sml-push-y2 med-push-y3">{{ $t('sign_description') }}</p>
             <ActionNetworkForm />
           </div> <!-- .c -->
         </div> <!-- .row -->
       </div> <!-- .wrapper -->
     </section>
-
-    <SocialSidebar />
   </DefaultLayout>
 </template>
 
 <script>
-import config from '~/config'
-import { createMetaTags, smoothScrollToElement } from '~/assets/js/helpers'
+import { smoothScrollToElement } from '~/assets/js/helpers'
 import DefaultLayout from '~/components/DefaultLayout'
 import ActionNetworkForm from '~/components/ActionNetworkForm'
-import SocialSidebar from '~/components/SocialSidebar'
 
 export default {
   components: {
     DefaultLayout,
-    ActionNetworkForm,
-    SocialSidebar
+    ActionNetworkForm
   },
 
   head() {
     return {
-      title: config.siteTitle,
-      meta: createMetaTags({
-        siteName: config.siteTitle,
-        title: config.sharing.title,
-        description: config.sharing.description,
-        image: config.sharing.image,
-        url: config.sharing.url
-      })
+      titleTemplate: `%s - ${this.$t('page_title')}`
     }
   },
 

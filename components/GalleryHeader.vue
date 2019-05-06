@@ -1,21 +1,23 @@
+<i18n src="~/locales/components/GalleryHeader.yml"></i18n>
+
 <template>
   <header class="page-header">
     <div class="wrapper">
       <div class="row">
         <div class="sml-c6 med-c8">
-          <a href="/">
+          <nuxt-link :to="localePath('index')">
             <Logo />
-          </a>
+          </nuxt-link>
         </div> <!-- .c -->
         <div class="sml-c6 med-c4">
           <div class="flex-grid sml-flex-row sml-push-y-half">
             <p class="text-meta text-right sml-hide lrg-show">
-              <strong>Filter by state:</strong>
+              <strong>{{ $t('filter_by_state') }}</strong>
             </p>
             <form>
               <select v-model="selectedState" @change="updateSelectedState()">
                 <option :value="null">
-                  Show all states
+                  {{ $t('show_all_states') }}
                 </option>
                 <option v-for="(name, code) in states" :key="code" :value="code">
                   {{ name }}

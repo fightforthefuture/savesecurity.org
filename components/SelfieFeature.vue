@@ -1,3 +1,5 @@
+<i18n src="~/locales/global.yml"></i18n>
+
 <template>
   <div v-if="selfie" class="text-center">
     <div class="selfie-wrapper">
@@ -16,7 +18,7 @@
         <span v-if="!selfie.website">{{ selfie.name }}</span>
         <span v-if="selfie.description">, {{ selfie.description }}</span>
         <span v-if="selfie.location">
-          from {{ selfie.location }}
+          {{ $t('global.common.from') }} {{ selfie.location }}
         </span>
       </strong>
     </p>

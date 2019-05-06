@@ -1,34 +1,26 @@
+<i18n src="~/locales/components/PageFooter.yml"></i18n>
+<i18n src="~/locales/global.yml"></i18n>
+
 <template>
   <div class="page-footer text-center">
     <div class="sml-pad-y4">
       <div class="wrapper">
-        <p class="text-loud">
-          Built by:
-        </p>
+        <p>{{ $t('built_by') }}</p>
         <a href="https://www.fightforthefuture.org">
-          <img src="~assets/images/fftf-logo.svg" class="grid-center"
-               alt="Fight for the Future logo">
+          <img src="~assets/images/fftf-logo.svg"
+               :alt="$t('global.common.logo_alt')"
+               class="grid-center sml-push-y-half">
         </a>
       </div> <!-- .wrapper -->
     </div> <!-- .pad -->
     <div class="contact-block sml-pad-y5 sml-push-y2">
       <div class="wrapper">
-        <p class="text-loud tuck-bottom">
-          For press inquiries, please contact us at:
-        </p>
+        <p class="tuck-bottom">{{ $t('for_press') }}</p>
         <p class="sml-push-y1 tuck-bottom">
-          <small>
-            <a href="tel://5084745248">(508) 474-5248</a> or
-            <a href="mailto:press@fightforthefuture.org">
-              press@fightforthefuture.org</a>
-          </small>
+          <small v-html="$t('press_contact_html')"></small>
         </p>
         <p>
-          <small>
-            All other inquiries, contact
-            <a href="mailto:team@fightforthefuture.org">
-              team@fightforthefuture.org</a>
-          </small>
+          <small v-html="$t('other_contact_html')"></small>
         </p>
       </div> <!-- .wrapper -->
     </div> <!-- .contact-block -->
