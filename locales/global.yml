@@ -10,10 +10,8 @@ en:
       url: https://www.example.com
     call_script: >
       TODO: call script goes here
-    letter_html: |
-      <p>
-        TODO: letter text goes here
-      </p>
+    letter_text: |
+      TODO: letter text goes here
     common:
       # In Alphabetical Order
       clear: Clear

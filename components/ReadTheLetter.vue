@@ -4,7 +4,7 @@
 <template>
   <div>
     <h2 class="text-center">{{ $t('title') }}</h2>
-    <div class="sml-push-y2 med-push-y3" v-html="letterHTML"></div>
+    <div class="sml-push-y2 med-push-y3" v-html="letterText"></div>
   </div>
 </template>
 
@@ -19,8 +19,9 @@ export default {
   },
 
   computed: {
-    letterHTML() {
-      return this.letter ? this.letter : this.$t('global.letter_html')
+    letterText() {
+      const letter = this.letter ? this.letter : this.$t('global.letter_text')
+      return letter.split('\n\n').map(l => `<p>${l}</p>`).join('')
     }
   }
 }
