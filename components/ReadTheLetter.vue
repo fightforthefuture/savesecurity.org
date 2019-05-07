@@ -4,13 +4,11 @@
 <template>
   <div>
     <h2 class="text-center">{{ $t('title') }}</h2>
-    <div class="sml-push-y2 med-push-y3" v-html="letterText"></div>
+    <div class="sml-push-y2 med-push-y3" v-html="letterHTML"></div>
   </div>
 </template>
 
 <script>
-import { simpleFormat } from '~/assets/js/helpers'
-
 export default {
   props: {
     letter: {
@@ -21,8 +19,8 @@ export default {
   },
 
   computed: {
-    letterText() {
-      return simpleFormat(this.letter ? this.letter : this.$t('global.letter_text'))
+    letterHTML() {
+      return this.letter ? this.letter : this.$t('global.letter_html')
     }
   }
 }

@@ -8,10 +8,12 @@ en:
       image: https://www.example.com/share.jpg
       default_tweet_text: FIXME
       url: https://www.example.com
-    call_script: |
+    call_script: >
       TODO: call script goes here
-    letter_text: |
-      TODO: letter text goes here
+    letter_html: |
+      <p>
+        TODO: letter text goes here
+      </p>
     common:
       # In Alphabetical Order
       clear: Clear

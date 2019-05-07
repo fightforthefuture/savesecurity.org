@@ -8,7 +8,7 @@
           <div class="sml-c12 grid-center text-center">
             <h1>{{ $t('page_title') }}</h1>
             <nuxt-link :to="localePath('index')" class="btn sml-push-y1 med-push-y2">
-              <img src="/photo.svg" class="med-push-y-half">
+              <img src="/photo.svg" :alt="$t('camera_icon_alt')">
               {{ $t('photo_button_cta') }}
             </nuxt-link>
           </div> <!-- .c -->

@@ -2,9 +2,9 @@ import config from '~/config'
 
 export const state = () => ({
   // State > Config
-  callpowerCampaignId: config.callpowerCampaignId,
+  callpowerCampaignId: null,
   donateUrl: config.donateUrl,
-  callScript: config.callScript,
+  callScript: null,
   isArchived: config.isArchived,
 
   // State > Modal
