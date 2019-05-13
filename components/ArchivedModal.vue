@@ -7,18 +7,6 @@
     <img src="~assets/images/fftf-logo-dark.svg" class="grid-center"
          :alt="$t('global.common.logo_alt')">
 
-    <div class="sml-push-y2" v-html="message"></div>
+    <div class="sml-push-y2" v-html="$t('message_html')"></div>
   </div>
 </template>
-
-<script>
-import { simpleFormat } from '~/assets/js/helpers'
-
-export default {
-  computed: {
-    message() {
-      return simpleFormat(this.$t('message_html'))
-    }
-  }
-}
-</script>

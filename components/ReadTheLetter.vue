@@ -9,8 +9,6 @@
 </template>
 
 <script>
-import { simpleFormat } from '~/assets/js/helpers'
-
 export default {
   props: {
     letter: {
@@ -22,7 +20,8 @@ export default {
 
   computed: {
     letterText() {
-      return simpleFormat(this.letter ? this.letter : this.$t('global.letter_text'))
+      const letter = this.letter ? this.letter : this.$t('global.letter_text')
+      return letter.split('\n\n').map(l => `<p>${l}</p>`).join('')
     }
   }
 }
