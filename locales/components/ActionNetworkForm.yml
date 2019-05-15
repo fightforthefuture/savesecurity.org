@@ -24,7 +24,8 @@ en:
     zip: ZIP*
     phone: |
       Phone # (for text list)
-    company: Company
+    is_an_org: Are you signing for an org or business?
+    company: Company Name
     comment: Comment*
     button_cta: Sign the Petition
   thanks:

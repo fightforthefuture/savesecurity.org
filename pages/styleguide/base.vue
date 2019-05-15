@@ -197,29 +197,46 @@
               <option>Option 5</option>
             </select>
           </div> <!-- .select -->
-        </div>
+        </div> <!-- .push -->
         <div class="checkbox sml-push-y2">
           <input id="checkbox-1" type="checkbox">
           <label for="checkbox-1">Checkbox label</label>
-        </div>
+        </div> <!-- .checkbox -->
         <div class="radio sml-push-y2">
           <input id="radio-1" type="radio" name="radio-example">
           <label for="radio-1">Radio label 1</label>
-        </div>
+        </div> <!-- .radio -->
         <div class="radio sml-push-y2">
           <input id="radio-2" type="radio" name="radio-example">
           <label for="radio-2">Radio label 2</label>
-        </div>
+        </div> <!-- .radio -->
         <div class="sml-push-y2 flex-grid sml-flex-row">
           <div class="faux-btn">
             <input id="radio-button-yes" type="radio" name="radio-button">
             <label for="radio-button-yes">Radio button: yes</label>
           </div> <!-- .faux-btn -->
           <div class="faux-btn">
-            <input id="radio-button-no" type="radio" name="radio-button">
+            <input id="radio-button-no" type="radio" name="radio-button" checked="true">
             <label for="radio-button-no">Radio button: no</label>
           </div> <!-- .faux-btn -->
-        </div>
+        </div> <!-- .flex-grid -->
+        <div class="sml-push-y2 flex-grid">
+          <p class="sml-flex-2 med-flex-3 text-left">
+            Is this a yes or no question?
+          </p>
+          <div class="radio-toggle sml-pad-half">
+            <div class="flex-grid sml-flex-row">
+              <div>
+                <input type="radio" id="rt1" name="radio-toggle" checked="true">
+                <label for="rt1">Yes</label>
+              </div>
+              <div>
+                <input type="radio" id="rt2" name="radio-toggle">
+                <label for="rt2">No</label>
+              </div>
+            </div> <!-- .flex-grid -->
+          </div> <!-- .radio-toggle -->
+        </div> <!-- .push -->
         <div class="sml-push-y2">
           <button type="submit" class="btn block">Submit</button>
         </div> <!-- div.submit -->
