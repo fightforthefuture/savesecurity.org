@@ -48,7 +48,8 @@
         <input v-model="address"
                type="text"
                class="sml-flex-2"
-               :placeholder="$t('form.address')">
+               :placeholder="`${$t('form.address')}${contactCongress === 1 ? '*' : ''}`"
+               :required="contactCongress === 1">
         <input v-model="zipCode"
                type="tel"
                :placeholder="$t('form.zip')"
