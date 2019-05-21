@@ -32,7 +32,10 @@ export const state = () => ({
 
   // State > Photo Submissions
   photoSource: null,
-  selfie: {}
+  selfie: {},
+
+  // State > US State Select
+  selectedState: null
 })
 
 export const mutations = {
@@ -109,6 +112,11 @@ export const mutations = {
 
   setSelfiesCurPageNum(state, value) {
     state.selfiesCurPageNum = value
+  },
+
+  // Mutations > US State Select
+  setSelectedState(state, value) {
+    state.selectedState = value
   }
 }
 

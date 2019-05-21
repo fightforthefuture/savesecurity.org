@@ -2,7 +2,7 @@
 
 <template>
   <form @submit.prevent="submitForm()">
-    <p class="text-warn" v-if="errorMessage">{{ errorMessage }}</p>
+    <p class="text-warn text-center" v-if="errorMessage">{{ errorMessage }}</p>
     <div class="flex-grid sml-flex-row">
       <input type="text" v-model="address" :placeholder="$t('address')"
              class="sml-flex-2" required>
@@ -12,7 +12,7 @@
       <span v-if="isSending">{{ $t('searching') }}</span>
       <span v-else>{{ $t('button_cta') }}</span>
     </button>
-    <p class="sml-push-y1">
+    <p class="sml-push-y1 text-center">
       <small>{{ $t('disclaimer') }}</small>
     </p>
   </form>
