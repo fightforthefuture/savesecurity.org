@@ -16,9 +16,9 @@
     "deploy": "aws s3 sync dist s3://www.example.com --acl public-read --delete --exclude 'styleguide/*'"
   },
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "nuxt": "^2.3.4",
     "@nuxtjs/axios": "^5.3.6",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.7.1",
     "nuxt-i18n": "^5.10.0"
   },
   "devDependencies": {
