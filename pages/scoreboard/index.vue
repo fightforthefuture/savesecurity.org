@@ -1,8 +1,8 @@
-<i18n src="~/locales/pages/scoreboard.yml"></i18n>
+<i18n src="~/locales/pages/scoreboard/index.yml"></i18n>
 
 <template>
   <DefaultLayout>
-    <section id="sign" class="sml-pad-y3 med-pad-y6">
+    <section class="sml-pad-y3 med-pad-y6">
       <div class="wrapper">
         <div class="row">
           <div class="sml-c12 lrg-c8 grid-center text-center">

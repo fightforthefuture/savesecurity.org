@@ -1,85 +1,59 @@
 <i18n src="~/locales/components/Scoreboard.yml"></i18n>
 
-<style lang="scss" scoped>
-.politicians {
-  text-align: center;
-}
-.rep {
-  display: inline-block;
-  margin: $gutter;
-}
-.rep-link {
-  display: block;
-  max-width: 100px;
-  border: none;
-}
-</style>
-
 <template>
   <div>
     <ScoreboardForm />
     <no-ssr>
-      <div class="politicians sml-push-y2 med-push-y4">
-        <div class="flex-grid sml-flex-row">
-          <div class="sml-pad-1 fill-warn">{{ $t('against') }}</div>
-          <div class="sml-pad-1 fill-success">{{ $t('supports') }}</div>
-          <div class="sml-pad-1 fill-grey">{{ $t('no_stance') }}</div>
-        </div> <!-- .flex-grid -->
+      <ScoreboardLegend class="sml-push-y2 med-push-y4" />
+      <ScoreboardStateSelect class="sml-push-y2 med-push-y3" />
 
-        <select v-model="selectedState" class="sml-push-y2 med-push-y3">
-          <option :value="null">{{ $t('select_state') }}</option>
-          <option v-for="(name, code) in states" :key="code" :value="code">
-            {{ name }}
-          </option>
-        </select>
-
-        <div v-if="politicians.length > 0" class="fade-in sml-push-y2">
-          <div v-for="rep in politicians"
-               :key="`rep-${rep.bioguide_id}`"
-               class="rep">
-            <nuxt-link
-                :to="localePath({ name: 'scoreboard-id', params: { id: rep.bioguide_id } })"
-                class="rep-link">
-              <ScoreboardRep :rep="rep" />
-              <div class="btn btn-sml btn-block sml-push-y-half">
-                {{ $t('view') }}
-              </div>
-            </nuxt-link>
-          </div> <!-- .rep -->
-        </div> <!-- v-if -->
-        <div v-else-if="selectedState && !isLoading">
-          <h3>{{ $t('no_results') }}</h3>
-        </div> <!-- v-else-if -->
-        <p class="sml-push-y2 med-push-y3">
-          <a href="#TODO" class="btn">{{ $t('view_all') }}</a>
-        </p>
-      </div> <!-- .politicians -->
+      <ScoreboardGroup
+        v-if="politicians.length > 0"
+        :politicians="politicians"
+        class="fade-in sml-push-y2" />
+      <div v-else-if="selectedState && !isLoading">
+        <h3 class="text-center">{{ $t('no_results') }}</h3>
+      </div> <!-- v-else-if -->
+      <p class="sml-push-y2 med-push-y3 text-center">
+        <nuxt-link :to="localePath('scoreboard-all')" class="btn">
+          {{ $t('view_all') }}
+        </nuxt-link>
+      </p>
     </no-ssr>
   </div>
 </template>
 
 <script>
 import { geocodeState } from '~/assets/js/helpers'
-import US_STATES from '~/assets/data/states.json'
 import ScoreboardForm from '~/components/ScoreboardForm'
-import ScoreboardRep from '~/components/ScoreboardRep'
+import ScoreboardGroup from '~/components/ScoreboardGroup'
+import ScoreboardLegend from '~/components/ScoreboardLegend'
+import ScoreboardStateSelect from '~/components/ScoreboardStateSelect'
 
 export default {
   components: {
     ScoreboardForm,
-    ScoreboardRep
+    ScoreboardGroup,
+    ScoreboardLegend,
+    ScoreboardStateSelect
   },
 
   data() {
     return {
-      selectedState: null,
       politicians: [],
       isLoading: false
     }
   },
 
   computed: {
-    states() { return US_STATES }
+    selectedState: {
+      get() {
+        return this.$store.state.selectedState
+      },
+      set(value) {
+        this.$store.commit('setSelectedState', value)
+      }
+    }
   },
 
   watch: {
