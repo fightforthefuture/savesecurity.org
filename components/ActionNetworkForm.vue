@@ -48,7 +48,8 @@
         <input v-model="address"
                type="text"
                class="sml-flex-2"
-               :placeholder="$t('form.address')">
+               :placeholder="`${$t('form.address')}${contactCongress === 1 ? '*' : ''}`"
+               :required="contactCongress === 1">
         <input v-model="zipCode"
                type="tel"
                :placeholder="$t('form.zip')"
@@ -59,8 +60,41 @@
                :placeholder="$t('form.phone')">
       </div> <!-- .flex-grid -->
       <div v-if="hasCompany" class="sml-push-y1">
-        <input v-model="companyName" type="text" :placeholder="$t('form.company')">
-      </div>
+        <div v-if="hasCompanyToggle"
+             class="flex-grid sml-flex-row flex-center sml-push-y1">
+          <p class="sml-flex-2 med-flex-3 text-left">
+            {{ $t('form.is_an_org') }}
+          </p>
+          <div class="radio-toggle sml-pad-half">
+            <div class="flex-grid sml-flex-row">
+              <div>
+                <input
+                  v-model="isBusinessOwner"
+                  type="radio"
+                  :value="false"
+                  id="not-biz">
+                <label for="not-biz">{{ $t('global.common.no') }}</label>
+              </div>
+              <div>
+                <input
+                  v-model="isBusinessOwner"
+                  type="radio"
+                  :value="true"
+                  id="is-biz">
+                <label for="is-biz">{{ $t('global.common.yes') }}</label>
+              </div>
+            </div> <!-- .flex-grid -->
+          </div> <!-- .radio-toggle -->
+        </div> <!-- .flex-grid -->
+
+        <div v-if="isBusinessOwner || !hasCompanyToggle" class="sml-push-y1">
+          <input
+            v-model="companyName"
+            type="text"
+            :placeholder="`${$t('form.company')}${hasCompanyToggle ? '*': ''}`"
+            :required="hasCompanyToggle">
+        </div> <!-- v-if isBusinessOwner -->
+      </div> <!-- v-if hasCompany -->
       <div v-if="hasComment" class="sml-push-y1 textarea-with-btn">
         <textarea
           v-model="comment"
@@ -168,6 +202,11 @@ export default {
       required: false,
       default: false
     },
+    hasCompanyToggle: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
     tweetText: {
       type: String,
       required: false,
@@ -181,6 +220,7 @@ export default {
       hasSigned: false,
       errorMessage: null,
       comment: null,
+      isBusinessOwner: false,
       companyName: null
     }
   },
