@@ -1,5 +1,5 @@
 <template>
-  <StyleguideLayout :component-name="title">
+  <StyleguideLayout component-name="ClickToCopy">
     <StyleguideExample>
       <ClickToCopy text-to-copy="Copy me!" />
     </StyleguideExample>
