@@ -48,7 +48,7 @@
         <input v-model="address"
                type="text"
                class="sml-flex-2"
-               :placeholder="`${$t('form.address')}${contactCongress === 1 ? '*' : ''}`"
+               :placeholder="`${$t('form.address')}${shouldContactCongress === 1 ? '*' : ''}`"
                :required="contactCongress === 1">
         <input v-model="zipCode"
                type="tel"
@@ -144,10 +144,10 @@ export default {
       }
     },
     contactCongress: {
-      type: Number,
+      type: String,
       required: false,
       default: function () {
-        return this.$t('contact_congress').toLowerCase() === 'yes' ? 1 : 0
+        return this.$t('contact_congress')
       }
     },
     /* eslint-disable vue/require-prop-types */
@@ -211,6 +211,13 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+    letterText: {
+      type: String,
+      required: false,
+      default: function () {
+        return this.$t('global.letter_text')
+      }
     }
   },
 
@@ -273,11 +280,15 @@ export default {
       set(value) {
         this.$store.commit('setPhone', value)
       }
+    },
+
+    shouldContactCongress() {
+      return this.contactCongress.toLowerCase() === 'yes' ? 1 : 0
     }
   },
 
   created() {
-    this.comment = this.$t('global.letter_text')
+    this.comment = this.letterText
   },
 
   methods: {
@@ -300,7 +311,7 @@ export default {
           },
           hp_enabled: 'true',
           guard: '',
-          contact_congress: this.contactCongress,
+          contact_congress: this.shouldContactCongress,
           fcc_ecfs_docket: this.fccDocket,
           an_tags: JSON.stringify(Object.values(this.tags)),
           an_petition_id: this.anPetitionId,
