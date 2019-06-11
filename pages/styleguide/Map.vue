@@ -1,5 +1,5 @@
 <template>
-  <StyleguideLayout :component-name="title">
+  <StyleguideLayout component-name="Map">
     <StyleguideExample>
       <Map :events="events" />
     </StyleguideExample>
