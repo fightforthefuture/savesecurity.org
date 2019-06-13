@@ -1,0 +1,25 @@
+en:
+  logos:
+    - name: TODO Name
+      image_url: https://dummyimage.com/250x100/000/fff.png
+    - name: TODO Name
+      image_url: https://dummyimage.com/500x200/000/fff.png
+    - name: TODO Name
+      image_url: https://dummyimage.com/250x100/000/fff.png
+    - name: TODO Name
+      image_url: https://dummyimage.com/250x100/000/fff.png
+    - name: TODO Name
+      image_url: https://dummyimage.com/250x100/000/fff.png
+    - name: TODO Name
+      image_url: https://dummyimage.com/250x100/000/fff.png
+    - name: TODO Name
+      image_url: https://dummyimage.com/250x100/000/fff.png
+    - name: Person
+      type: person
+      image_url: https://dummyimage.com/100x100/000/fff.png
+    - name: Alexandria Ocasio-Cortez
+      type: person
+      image_url: https://dummyimage.com/100x100/000/fff.png
+    - name: FirstName LastName
+      type: person
+      image_url: https://dummyimage.com/100x100/000/fff.png
