@@ -57,6 +57,9 @@
               <nuxt-link to="/styleguide/ActionNetworkForm">ActionNetworkForm</nuxt-link>
             </li>
             <li>
+              <nuxt-link to="/styleguide/CallForm">CallForm</nuxt-link>
+            </li>
+            <li>
               <nuxt-link to="/styleguide/Logo">Logo</nuxt-link>
             </li>
             <li>
