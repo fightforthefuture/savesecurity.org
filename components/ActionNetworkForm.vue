@@ -27,7 +27,7 @@
           </div> <!-- .c -->
           <div class="sml-c12 lrg-c4 sml-push-y1 lrg-push-y0">
             <a :href="donateUrl"
-               class="btn btn-block btn-bright"
+               class="btn btn-block"
                @click="$trackClick(`donate_button_success_${routeName}`)">
               <span>{{ $t('global.common.donate') }}</span>
             </a>
@@ -107,7 +107,7 @@
         </a>
       </div> <!-- .textarea-with-btn -->
 
-      <button class="btn btn-block btn-bright sml-push-y1" :disabled="isSending">
+      <button class="btn btn-block sml-push-y1" :disabled="isSending">
         <span v-if="isSending">{{ $t('global.common.sending') }}</span>
         <span v-else>{{ buttonText }}</span>
       </button>
