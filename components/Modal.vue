@@ -35,12 +35,16 @@ body.modal-open {
   position: absolute;
   top: $gutter;
   right: $gutter;
-  font-size: $font-size-2;
+  font-size: $m-font-size-2;
   line-height: 1;
   background-color: transparent;
   border:none;
   cursor: pointer;
   text-decoration: none;
+
+  @include respond-to(lrg) {
+    font-size: $font-size-2;
+  }
 }
 .modal .close:focus {
   outline: none;
