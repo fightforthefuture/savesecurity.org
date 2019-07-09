@@ -95,7 +95,8 @@
             :required="hasCompanyToggle">
         </div> <!-- v-if isBusinessOwner -->
       </div> <!-- v-if hasCompany -->
-      <div v-if="hasComment" class="sml-push-y1 textarea-with-btn">
+      <div v-if="hasComment || shouldContactCongress"
+           class="sml-push-y1 textarea-with-btn">
         <textarea
           v-model="comment"
           ref="comment"
