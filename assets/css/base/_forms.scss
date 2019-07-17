@@ -141,8 +141,6 @@ form .radio label {
   cursor: pointer;
 }
 .faux-btn input[type=checkbox]:checked ~ label,
-.faux-btn input[type=checkbox]:checked ~ label,
-.faux-btn input[type=radio]:checked ~ label,
 .faux-btn input[type=radio]:checked ~ label {
   background-color: $brand-color;
   color: $white;
@@ -172,7 +170,6 @@ form .radio-toggle input[type=radio] ~ label {
 .radio-toggle label:focus {
   cursor: pointer;
 }
-.radio-toggle input[type=radio]:checked ~ label,
 .radio-toggle input[type=radio]:checked ~ label {
   background-color: $brand-color;
 }
