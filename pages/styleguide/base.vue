@@ -264,6 +264,56 @@
         </ul>
       </template>
     </StyleguideBlock>
+
+    <StyleguideBlock title="Icons">
+      <p>Icons:</p>
+      <ul class="hoz sml-push-y1">
+        <li><img src="~assets/images/call-icon.svg" alt="call icon"></li>
+        <li><img src="~assets/images/warning-icon.svg" alt="warning icon"></li>
+        <li><img src="~assets/images/map-calendar.svg" alt="map calendar"></li>
+        <li><img src="~assets/images/map-pin.svg" alt="map pin"></li>
+      </ul>
+
+      <p class="sml-push-y2">Arrows:</p>
+      <ul class="hoz sml-push-y1">
+        <li><img src="~assets/images/arrow-down.svg" alt="arrow down"></li>
+      </ul>
+      <ul class="hoz sml-push-y1 sml-pad-y1 fill-grey-dark">
+        <li><img src="~assets/images/arrow-left.svg" alt="arrow left"></li>
+        <li><img src="~assets/images/arrow-right.svg" alt="arrow right"></li>
+      </ul>
+
+      <p class="sml-push-y2">Social:</p>
+      <ul class="hoz sml-push-y1 sml-pad-y1 fill-grey-dark">
+        <li><img src="~assets/images/facebook-logo.svg" alt="facebook logo"></li>
+        <li><img src="~assets/images/twitter-logo.svg" alt="twitter logo"></li>
+      </ul>
+    </StyleguideBlock>
+
+    <h2 id="blocks" class="sml-push-y2 med-push-y4">Blocks</h2>
+    <p class="sml-push-y2">
+      <strong class="text-brand">NOTE:</strong> This section is for styles often
+      used together to build common reusable blocks.
+    </p>
+    <StyleguideBlock title="Blocks > Module">
+      <div class="row">
+        <div class="sml-c12 med-c6">
+          <div class="fill-white sml-pad-2 lrg-pad-3">
+            <img src="https://placeimg.com/800/450/nature" alt="Placeholder image">
+            <h2 class="sml-push-y2 med-push-y3">Title</h2>
+            <div class="sml-push-y2">
+              <p>
+                Description: lorem ipsum dolor sit amet lorem ipsum dolor sit
+                amet lorem ipsum dolor sit amet.
+              </p>
+              <p class="sml-push-y2">
+                <a href="#">View More</a>
+              </p>
+            </div> <!-- .push -->
+          </div> <!-- .fill -->
+        </div> <!-- .c -->
+      </div> <!-- .row -->
+    </StyleguideBlock>
   </StyleguideLayout>
 </template>
 
