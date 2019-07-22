@@ -301,15 +301,13 @@
           <div class="fill-white sml-pad-2 lrg-pad-3">
             <img src="https://placeimg.com/800/450/nature" alt="Placeholder image">
             <h2 class="sml-push-y2 med-push-y3">Title</h2>
-            <div class="sml-push-y2">
-              <p>
-                Description: lorem ipsum dolor sit amet lorem ipsum dolor sit
-                amet lorem ipsum dolor sit amet.
-              </p>
-              <p class="sml-push-y2">
-                <a href="#">View More</a>
-              </p>
-            </div> <!-- .push -->
+            <p class="sml-push-y2">
+              Description: lorem ipsum dolor sit amet lorem ipsum dolor sit
+              amet lorem ipsum dolor sit amet.
+            </p>
+            <p class="sml-push-y2">
+              <a href="#">View More</a>
+            </p>
           </div> <!-- .fill -->
         </div> <!-- .c -->
       </div> <!-- .row -->
