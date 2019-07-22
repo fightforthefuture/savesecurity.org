@@ -72,6 +72,16 @@
                 Lists
               </nuxt-link>
             </li>
+            <li>
+              <nuxt-link to="/styleguide/base#icons" @click.native="toggleNav">
+                Icons
+              </nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/styleguide/base#blocks" @click.native="toggleNav">
+                Blocks
+              </nuxt-link>
+            </li>
           </ul>
           <h2 class="sml-push-y2">Components</h2>
           <ul>
