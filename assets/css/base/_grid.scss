@@ -134,6 +134,7 @@ body.full-width .wrapper {
   flex: 1;
 }
 .flex-center {
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;

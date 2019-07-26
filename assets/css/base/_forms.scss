@@ -14,17 +14,13 @@ form textarea:focus {
 form input::-moz-focus-inner { // NOTE: property needs to be separate
   outline: none;
 }
-form input[type=text],
-form input[type=email],
-form input[type=password],
-form input[type=number],
-form input[type=tel],
+form input:not([type=checkbox]):not([type=radio]),
 form textarea {
   display: block;
   width: 100%;
   padding: ($gutter + 1) $gutter*2 ($gutter + 2);
   background: $white;
-  border: 1px solid $grey-light-color;
+  border: 1px solid $brand-color;
   border-radius: $default-border-radius;
   -webkit-appearance: none;
 }
@@ -33,11 +29,7 @@ form textarea {
   max-width: 100%;
   resize: vertical;
 }
-form input[type=text]:focus,
-form input[type=email]:focus,
-form input[type=password]:focus,
-form input[type=number]:focus,
-form input[type=tel]:focus,
+form input:not([type=checkbox]):not([type=radio]):focus,
 form textarea:focus {
   border-color: $text-color;
   border-width: 1px;
@@ -55,20 +47,10 @@ form textarea.flat-top {
 }
 
 // Form > Placeholders
-::-webkit-input-placeholder {
-  color: $grey-light-color;
-  font-weight: $base-font-weight;
-}
-:-moz-placeholder {
-  color: $grey-light-color;
-  font-weight: $base-font-weight;
-}
-::-moz-placeholder {
-  color: $grey-light-color;
-  font-weight: $base-font-weight;
-}
+::-webkit-input-placeholder,
+:-moz-placeholder,
 :-ms-input-placeholder {
-  color: $grey-light-color;
+  color: lighten($text-color, 10%);
   font-weight: $base-font-weight;
 }
 

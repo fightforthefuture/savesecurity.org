@@ -1,15 +1,34 @@
 en:
-  page_title: "FIXME Page Title"
+  page_title: Strong encryption saves lives. We must protect it.
   intro:
-    Sub heading goes here, lorem ipsum dolor sit amet, consectetur adipiscing
-    elit. In nibh libero, venenatis sed justo eu, sollicitudin nisi. Integer
-    semper tortor orci, id ultricies velit laoreet in. Vestibulum sit amet ante
-    vel risus ornare ultrices sed id leo.
+    Strong encryption saves lives. We must protect it.
   scroll_down: Scroll down
-  sign_title: Sign the petition
-  sign_description: |
-    This issue is important because lorem ipsum dolor sit amet, consectetur
-    elit. In nibh libero, venenatis sed justo eu, sollicitudin nisi. Integer
-    semper tortor orci, id ultricies velit laoreet in. Vestibulum sit amet ante
-    vel risus ornare ultrices sed id leo.
 
+  sections:
+    sign:
+      title: Don't ban strong security, it saves lives!
+      description_html: |
+        <p>When the FBI tried to force Apple to weaken the security measures that keep all of us safe, Internet users rose up in opposition, and the FBI backed down. But now, there are other threats, including legislation like the Burr-Feinstein bill in the US and the "Snooper's Charter" in the UK that want to ban strong encryption. We're building a campaign to defend a future where all of us can speak with freedom, privacy, and security online.</p>
+        <p><strong>Add your voice. Sign below to say,<br>
+        "Save security! Don't ban strong encryption."</strong></p>
+
+    supporters:
+      title: Supporters
+      description_html: |
+        Financial backing for this campaign comes from the following organizations, and Fight for the Future's 1,000,000+ supporters:
+
+    summary:
+      title: What's Happening?
+      description_html: |
+        Right now, governments around the world are threatening the right to use encryption—the very basis for online privacy and security. Senators Feinstein and Burr have introduced legislation banning encryption in the US. In the UK, the Investigatory Powers bill could mandate encryption backdoors. And in Brazil, judges have already briefly blocked WhatsApp for it’s security measures - even arresting an employee. At a time when everything from critical infrastructure to bank accounts is at more risk of being hacked than ever, it’s hard to imagine a more backwards idea than banning encryption and requiring backdoors. After all, security experts agree that backdoors make us more vulnerable. Still, a loss in just one major country could shift technology choices everywhere. We need to win this debate once and for all. We're planning to seize every teachable moment to educate the public about the importance of encryption; to provide the tools that can be used to advocate reform; and to build a large and diverse coalition that includes allies across the political spectrum as well as a cadre of organizations and businesses.
+
+    coalition:
+      title: We stand together
+      description_html: |
+        These organizations and individuals have shown support for our SaveSecurity campaign on their websites or social media.
+
+    stakes:
+      title: What's at stake?
+      description_html: |
+        <p>Engineers use consumer products or apps with encryption to maintain the most sensitive systems on the planet. Hospitals. Air traffic control. Nuclear power. Threatening the right to use encryption puts lives at risk, by undermining security everywhere.</p>
+        <iframe class="sml-push-y3" width="560" height="315" src="https://www.youtube-nocookie.com/embed/zsjZ2r9Ygzw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

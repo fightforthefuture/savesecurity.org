@@ -1,4 +1,4 @@
-<i18n src="~/locales/components/LogoCloud.yml"></i18n>
+<i18n src="~/locales/components/SupporterCloud.yml"></i18n>
 
 <style lang="scss" scoped>
 .flex-grid .logo-container {

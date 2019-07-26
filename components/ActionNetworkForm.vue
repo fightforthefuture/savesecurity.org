@@ -318,6 +318,10 @@ export default {
 
   created() {
     this.comment = this.letterText
+
+    if (this.$route.query.signed) {
+      this.hasSigned = true
+    }
   },
 
   methods: {

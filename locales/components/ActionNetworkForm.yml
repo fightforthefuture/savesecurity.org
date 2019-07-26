@@ -1,13 +1,14 @@
 en:
-  petition_id: FIXME
+  petition_id: dad151da-e162-4ec5-8679-655bfcb2d03f
   callpower_id: null
   text_flow_id: OP91C5097075BF0D9B12B2544A6052FB9D
-  subject: FIXME subject
+  subject: null
   contact_congress: NO
   fcc_docket: null
-  redirect_url: FIXME
+  redirect_url: https://www.savesecurity.org/?signed=true
   tags:
-    - net-neutrality
+    - encryption
+    - privacy
   privacy_html: |
     <a href="https://www.fightforthefuture.org/" target="_blank">
       Fight for the Future

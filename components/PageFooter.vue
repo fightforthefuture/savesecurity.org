@@ -7,7 +7,7 @@
       <div class="wrapper">
         <p>{{ $t('built_by') }}</p>
         <a href="https://www.fightforthefuture.org">
-          <img src="~assets/images/fftf-logo.svg"
+          <img src="~assets/images/fftf-logo-dark.svg"
                :alt="$t('global.common.logo_alt')"
                class="grid-center sml-push-y-half">
         </a>

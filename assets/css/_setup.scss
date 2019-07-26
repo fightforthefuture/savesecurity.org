@@ -5,10 +5,10 @@
 // Colors
 $white:              #FFF;
 $black:              #000;
-$grey-light-color:   #CCC;
-$grey-color:         #999;
+$grey-light-color:   #f5f5f5;
+$grey-color:         #222a3c;
 $grey-dark-color:    #222;
-$brand-color:        blue; // TODO
+$brand-color:        #1561f8;
 $brand-dark-color:   darken($brand-color, 10%);
 $background-color:   $white;
 $text-color:         $grey-dark-color;
@@ -22,13 +22,13 @@ $twitter-dark-color:      darken($twitter-color, 10%);
 
 // Typography
 $base-text-align: left; // switch for rtl
-$sans-serif-stack: "Helvetica Neue", Helvetica, Arial, sans-serif; // TODO: embed font
+$sans-serif-stack: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size: 16px;
-$base-font-weight: normal;
-$bold-font-weight: bold;
+$base-font-weight: 300;
+$bold-font-weight: 600;
 $base-line-height: 1.6;
 
-$font-size-1: 36px;
+$font-size-1: 42px;
 $font-size-2: 24px;
 // $font-size-3: 18px;
 // $font-size-4: $base-font-size;
