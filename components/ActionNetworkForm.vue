@@ -36,28 +36,50 @@
       </div> <!-- v-if -->
     </div> <!-- .push -->
     <form v-if="!hasSigned"
-          @submit.prevent="submitForm()">
+          @submit.prevent="submitForm()"
+          action="https://queue.fftf.xyz/action"
+          method="post">
+      <input type="hidden" name="subject" :value="subject">
+      <input type="hidden" name="hp_enabled" value="true">
+      <input type="hidden" name="guard" value="">
+      <input type="hidden" name="contact_congress" :value="shouldContactCongress">
+      <input type="hidden" name="fcc_ecfs_docket" :value="fccDocket">
+      <input type="hidden" name="an_tags" :value="mothershipTags">
+      <input type="hidden" name="an_petition_id" :value="anPetitionId">
+      <input type="hidden" name="redirect_to" :value="$t('redirect_url')">
+
       <p v-if="errorMessage" class="text-warn">
         {{ errorMessage }}
       </p>
       <div class="flex-grid sml-flex-row">
-        <input v-model="name" type="text" :placeholder="$t('form.name')" required>
-        <input v-model="email" type="email" :placeholder="$t('form.email')" required>
+        <input v-model="name"
+          :placeholder="$t('form.name')"
+          type="text"
+          name="member[first_name]"
+          required>
+        <input v-model="email"
+          :placeholder="$t('form.email')"
+          type="email"
+          name="member[email]"
+          required>
       </div> <!-- .flex-grid -->
       <div class="flex-grid sml-flex-row sml-push-y1">
         <input v-model="address"
                type="text"
                class="sml-flex-2"
                :placeholder="`${$t('form.address')}${shouldContactCongress === 1 ? '*' : ''}`"
+               name="member[street_address]"
                :required="contactCongress === 1">
         <input v-model="zipCode"
                type="tel"
                :placeholder="$t('form.zip')"
+               name="member[postcode]"
                required>
         <input v-model.trim="phone"
                type="tel"
                class="sml-flex-2"
-               :placeholder="$t('form.phone')">
+               :placeholder="$t('form.phone')"
+               name="member[phone_number]">
       </div> <!-- .flex-grid -->
       <div v-if="hasCompany" class="sml-push-y1">
         <div v-if="hasCompanyToggle"
@@ -92,7 +114,8 @@
             v-model="companyName"
             type="text"
             :placeholder="`${$t('form.company')}${hasCompanyToggle ? '*': ''}`"
-            :required="hasCompanyToggle">
+            :required="hasCompanyToggle"
+            name="member[company]">
         </div> <!-- v-if isBusinessOwner -->
       </div> <!-- v-if hasCompany -->
       <div v-if="hasComment || shouldContactCongress"
@@ -101,6 +124,7 @@
           v-model="comment"
           ref="comment"
           :placeholder="$t('form.comment')"
+          name="action_comment"
           required>
         </textarea>
         <a class="btn btn-sml btn-alt" @click.prevent="clearComment()">
@@ -285,6 +309,10 @@ export default {
 
     shouldContactCongress() {
       return this.contactCongress.toLowerCase() === 'yes' ? 1 : 0
+    },
+
+    mothershipTags() {
+      return JSON.stringify(Object.values(this.tags))
     }
   },
 
@@ -314,7 +342,7 @@ export default {
           guard: '',
           contact_congress: this.shouldContactCongress,
           fcc_ecfs_docket: this.fccDocket,
-          an_tags: JSON.stringify(Object.values(this.tags)),
+          an_tags: this.mothershipTags,
           an_petition_id: this.anPetitionId,
           action_comment: this.hasComment ? this.comment : ''
         })

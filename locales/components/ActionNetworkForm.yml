@@ -5,6 +5,7 @@ en:
   subject: FIXME subject
   contact_congress: NO
   fcc_docket: null
+  redirect_url: FIXME
   tags:
     - net-neutrality
   privacy_html: |
