@@ -318,7 +318,9 @@ export default {
 
   created() {
     this.comment = this.letterText
+  },
 
+  mounted() {
     if (this.$route.query.signed) {
       this.hasSigned = true
     }
