@@ -12,10 +12,10 @@ en:
         <p><strong>Add your voice. Sign below to say,<br>
         "Save security! Don't ban strong encryption."</strong></p>
 
-    supporters:
-      title: Supporters
-      description_html: |
-        Financial backing for this campaign comes from the following organizations, and Fight for the Future's 1,000,000+ supporters:
+    # supporters:
+    #   title: Supporters
+    #   description_html: |
+    #     Financial backing for this campaign comes from the following organizations, and Fight for the Future's 1,000,000+ supporters:
 
     summary:
       title: What's Happening?

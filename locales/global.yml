@@ -9,8 +9,8 @@ en:
       default_tweet_text: |
         Retweet if you agree: government backdoors put us all at risk. #SaveSecurity
       url: https://www.savesecurity.org/
-    call_script: >
-      TODO: call script goes here
+    call_script: |
+      I'm calling to ask my lawmakers to SAVE SECURITY.  Please support strong, commercially available end-to-end encryption and oppose any efforts to create dangerous digital backdoors. Thank you.
     letter_text: |
       TODO: letter text goes here
     common:
