@@ -4,13 +4,13 @@ en:
     site_title: Save Security
     sharing:
       title: Save Security
-      description: Strong security saves lives.
+      description: Encryption saves lives.
       image: https://www.savesecurity.org/share.jpg
       default_tweet_text: |
-        Retweet if you agree: government backdoors put us all at risk. #SaveSecurity
+        Attorney General William Barr is demanding that tech companies break encryption for law enforcement agencies, but that will only make us less safe to hacking and terrorist attacks.  Here’s why …
       url: https://www.savesecurity.org
     call_script: |
-      I'm calling to ask my lawmakers to SAVE SECURITY.  Please support strong, commercially available end-to-end encryption and oppose any efforts to create dangerous digital backdoors. Thank you.
+      I'm calling to ask my lawmakers to save security.  Please support strong, commercially available end-to-end encryption and oppose any efforts to create dangerous digital backdoors. Thank you.
     letter_text: |
       TODO: letter text goes here
     common:
