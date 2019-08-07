@@ -7,7 +7,7 @@ en:
 
   sections:
     sign:
-      title: BACKDOORS THREATEN OUR SAFETY
+      title: Backdoors Threaten Our Safety
       description_html: |
         <p>
         Encryption is a basic form of security, like a lock on the front door of your house.  
@@ -32,8 +32,8 @@ en:
     #   description_html: |
     #     Financial backing for this campaign comes from the following organizations, and Fight for the Future's 1,000,000+ supporters:
 
-    summary:
-      title: DIGITAL SECURITY IS UNDER ATTACK
+    encryption:
+      title: Encryption Is Under Attack
       description_html: |
         <p>
         Attorney General William Barr is 
@@ -44,17 +44,56 @@ en:
         from smart doorbells and self-driving cars to hospitals and air traffic control centers. 
         </p>
         <iframe class="sml-push-y3" width="560" height="315" src="https://www.youtube-nocookie.com/embed/zsjZ2r9Ygzw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>
+        This isn’t some hypothetical case of what might or might not occur in the future; this already 
+        happened on more than one occasion. Hackers have used our own digital backdoors to interfere with 
+        <a href="https://www.wired.com/2015/12/researchers-solve-the-juniper-mystery-and-they-say-its-partially-the-nsas-fault/"
+        target=_blank">communication systems</a>, 
+        <a href="https://en.wikipedia.org/wiki/Petya_(malware)"
+        target=_blank">power grids</a>, and 
+        <a href="https://en.wikipedia.org/wiki/Stuxnet"
+        target=_blank">nuclear facilities</a>
+        That's why the former chief of the National Security Administration has 
+        <a href="https://www.businessinsider.com/michael-hayden-encryption-apple-2016-2"
+        target=_blank">warned</a> that breaking encryption makes everyone less safe. And yet, Attorney 
+        General Barr still doesn’t get it.
+        </p>
+        
+    disaster:
+      title: A Disaster Waiting to Happen
+      description_html: |
+        <p>
+        Encryption relies on complicated math equations to effectively hide data from prying eyes. Even 
+        if the Department of Justice manages to legally compel tech companies to break the encryption 
+        services they use, anyone with sufficient math and programming skills can simply 
+        <a href="https://www.eff.org/deeplinks/2017/07/australian-pm-calls-end-end-encryption-ban-says-laws-mathematics-dont-apply-down"
+        target=_blank">create their own</a> encryption systems. Any sufficiently-motivated bad actors 
+        will still be able to communicate in secret, while the rest of us will be left more vulnerable 
+        than ever before.
+        </p>
+        <p>
+        And it isn’t just state-sponsored terrorists or malicious hackers we should be worried about.  
+        If Barr gets his way, your emails, text messages, computer files, phone calls — literally everything 
+        you say and do online — will be subject to government snooping. Law enforcement agents frequently 
+        <a href="https://apnews.com/699236946e3140659fff8a2362e16f43"
+        target=_blank">abuse</a> digital surveillance systems to stalk their romantic interests, snoop on 
+        neighbors, and harass journalists. Providing these people with even greater access into our 
+        activities is certain result in greater abuse.
+        </p>
+        <p>
+        Digital backdoors are a disaster waiting to happen, plain and simple. Privacy is a 
+        <a href="https://www.ohchr.org/EN/Issues/DigitalAge/Pages/DigitalAgeIndex.aspx"
+        target=_blank">fundamental human right</a> around the world, and it has been recognized by the 
+        United States Supreme Court as 
+        <a href="https://en.wikipedia.org/wiki/Griswold_v._Connecticut"
+        target=_blank">the law of the land</a>. Let’s make sure it stays that way.
 
+        
     coalition:
       title: We stand together
       description_html: |
         These organizations and individuals have shown support for our SaveSecurity campaign on their websites or social media.
 
-    stakes:
-      title: What's at stake?
-      description_html: |
-        <p>Engineers use consumer products or apps with encryption to maintain the most sensitive systems on the planet. Hospitals. Air traffic control. Nuclear power. Threatening the right to use encryption puts lives at risk, by undermining security everywhere.</p>
-        
     social:
       title: Social Media
       description_html: |
