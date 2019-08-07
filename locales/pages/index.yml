@@ -89,13 +89,15 @@ en:
         <a href="https://en.wikipedia.org/wiki/Griswold_v._Connecticut"
         target=_blank">the law of the land</a>. Let’s make sure it stays that way.
 
+social:
+      title: Social Media
+      description_html: |
+        <p>If you're active on social media, have a video channel, or moderate an online forum, put your small 
+        piece of the Internet on alert by with our social media images below. Change your cover image. Update
+        your profile pic. Share a story. Do whatever you can to let the world know you want to save security!</p>
         
     coalition:
       title: We stand together
       description_html: |
-        These organizations and individuals have shown support for our SaveSecurity campaign on their websites or social media.
+        These organizations and individuals have shown support for our Save Security campaign on their websites or social media.
 
-    social:
-      title: Social Media
-      description_html: |
-        <p>If you're active on social media, have a video channel, or moderate an online forum, put your small piece of the Internet on alert by changing your profile on social media to one of the images below.</p>
