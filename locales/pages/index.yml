@@ -7,7 +7,7 @@ en:
 
   sections:
     sign:
-      title: Backdoors threaten our freedom & safety
+      title: Backdoors threaten our safety
       description_html: |
         <p>Encryption is a basic form of security, like a lock on the front door of your house.  
         It protects valuable digital information — everything from personal communications and 
@@ -18,9 +18,9 @@ en:
         encryption, but this will only make all of us more vulnerable to privacy
         <a href="https://apnews.com/699236946e3140659fff8a2362e16f43"
         target=_blank">abuse</a>, malicious
-        a href="https://www.wired.com/2015/12/researchers-solve-the-juniper-mystery-and-they-say-its-partially-the-nsas-fault/"
+        <a href="https://www.wired.com/2015/12/researchers-solve-the-juniper-mystery-and-they-say-its-partially-the-nsas-fault/"
         target=_blank">hacking</a>, and terrorist
-        a href="https://www.npr.org/2019/05/14/723215498/florida-governor-says-russian-hackers-breached-two-florida-counties-in-2016"
+        <a href="https://www.npr.org/2019/05/14/723215498/florida-governor-says-russian-hackers-breached-two-florida-counties-in-2016"
         target=_blank">attacks</a>.
         </p>
         
