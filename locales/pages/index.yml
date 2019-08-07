@@ -3,6 +3,7 @@ en:
   intro:
     Strong encryption saves lives. We must protect it.
   scroll_down: Scroll down
+  download_button: Download Image
 
   sections:
     sign:
@@ -32,3 +33,7 @@ en:
       description_html: |
         <p>Engineers use consumer products or apps with encryption to maintain the most sensitive systems on the planet. Hospitals. Air traffic control. Nuclear power. Threatening the right to use encryption puts lives at risk, by undermining security everywhere.</p>
         <iframe class="sml-push-y3" width="560" height="315" src="https://www.youtube-nocookie.com/embed/zsjZ2r9Ygzw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    social:
+      title: Social Media
+      description_html: |
+        <p>If you're active on social media, have a video channel, or moderate an online forum, put your small piece of the Internet on alert by changing your profile on social media to one of the images below.</p>
