@@ -1,17 +1,31 @@
 en:
-  page_title: Strong encryption saves lives. We must protect it.
+  page_title: Encryption saves lives. We must defend it.
   intro:
-    Strong encryption saves lives. We must protect it.
+    Encryption saves lives. We must protect it.
   scroll_down: Scroll down
   download_button: Download Image
 
   sections:
     sign:
-      title: Don't ban strong security, it saves lives!
+      title: Backdoors threaten our freedom & safety
       description_html: |
-        <p>When the FBI tried to force Apple to weaken the security measures that keep all of us safe, Internet users rose up in opposition, and the FBI backed down. But now, there are other threats, including legislation like the Burr-Feinstein bill in the US and the "Snooper's Charter" in the UK that want to ban strong encryption. We're building a campaign to defend a future where all of us can speak with freedom, privacy, and security online.</p>
-        <p><strong>Add your voice. Sign below to say,<br>
-        "Save security! Don't ban strong encryption."</strong></p>
+        <p>Encryption is a basic form of security, like a lock on the front door of your house.  
+        It protects valuable digital information — everything from personal communications and 
+        bank account passwords to air traffic control systems and nuclear power plant controls.
+        The US Department of Justice is 
+        <a href="https://arstechnica.com/tech-policy/2019/08/post-snowden-tech-became-more-secure-but-is-govt-really-at-risk-of-going-dark/"
+        target=_blank">demanding</a> that tech companies create digital backdoors that break 
+        encryption, but this will only make all of us more vulnerable to privacy
+        <a href="https://apnews.com/699236946e3140659fff8a2362e16f43"
+        target=_blank">abuse</a>, malicious
+        a href="https://www.wired.com/2015/12/researchers-solve-the-juniper-mystery-and-they-say-its-partially-the-nsas-fault/"
+        target=_blank">hacking</a>, and terrorist
+        a href="https://www.npr.org/2019/05/14/723215498/florida-governor-says-russian-hackers-breached-two-florida-counties-in-2016"
+        target=_blank">attacks</a>.
+        </p>
+        
+        <p><strong>Sign the petition to tell your lawmakers and the DOJ:<br>
+        "Encryption keeps us safe. Backdoors put everyone in danger and threaten our basic rights."</strong></p>
 
     # supporters:
     #   title: Supporters
