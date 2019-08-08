@@ -220,7 +220,9 @@ export default {
     hasComment: {
       type: Boolean,
       required: false,
-      default: false
+      default: function () {
+        return this.$t('form.comment')
+      }
     },
     hasCompany: {
       type: Boolean,

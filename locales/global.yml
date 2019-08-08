@@ -12,7 +12,9 @@ en:
     call_script: |
       I'm calling to ask my lawmakers to save security.  Please support strong, commercially available end-to-end encryption and oppose any efforts to create dangerous digital backdoors. Thank you.
     letter_text: |
-      TODO: letter text goes here
+      Encryption keeps us safe. Backdoors put everyone in danger and threaten our basic rights.
+
+      Tell Attorney General Barr and the Department of Justice to STOP trying to break encryption!
     common:
       # In Alphabetical Order
       clear: Clear
