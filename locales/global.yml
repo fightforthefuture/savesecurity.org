@@ -7,7 +7,7 @@ en:
       description: Encryption saves lives.
       image: https://www.savesecurity.org/share.jpg
       default_tweet_text: |
-        Attorney General William Barr is demanding that tech companies break encryption for law enforcement agencies, but that will only make us less safe to hacking and terrorist attacks.  Here’s why …
+        Attorney General William Barr is demanding that tech companies break encryption for law enforcement agencies, but that will only make us less safe from hacking and terrorist attacks.  Here’s why …
       url: https://www.savesecurity.org
     call_script: |
       I'm calling to ask my lawmakers to save security.  Please support strong, commercially available end-to-end encryption and oppose any efforts to create dangerous digital backdoors. Thank you.
