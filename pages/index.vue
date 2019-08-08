@@ -24,10 +24,6 @@ $item-padding: 2rem;
   }
 }
 
-section:nth-child(odd):not(#intro) {
-  background-color: $grey-light-color;
-}
-
 .gallery {
   width: 90%;
   max-width: ($item-width + $item-padding) * 3;
@@ -97,6 +93,18 @@ section:nth-child(odd):not(#intro) {
         background-color: lighten($grey-dark-color, 10%);
         transition: background-color .2s;
       }
+    }
+  }
+}
+
+section:nth-child(odd):not(#intro) {
+  background-color: $grey-light-color;
+
+  .gallery .item {
+    background-color: $white;
+
+    &:hover {
+      background-color: $white;
     }
   }
 }
