@@ -14,6 +14,8 @@ en:
         It protects valuable digital information — everything from personal communications and 
         bank account passwords to air traffic control systems and nuclear power plant controls.
         The US Department of Justice is 
+        <a href="https://www.washingtonpost.com/news/the-switch/wp/2016/02/19/the-two-sides-of-the-apple-debate/"
+        target=_blank">once again</a>
         <a href="https://arstechnica.com/tech-policy/2019/08/post-snowden-tech-became-more-secure-but-is-govt-really-at-risk-of-going-dark/"
         target=_blank">demanding</a> that tech companies create digital backdoors that break 
         encryption, but this will only make all of us more vulnerable to privacy
@@ -46,14 +48,13 @@ en:
         <iframe class="sml-push-y3" width="560" height="315" src="https://www.youtube-nocookie.com/embed/zsjZ2r9Ygzw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <br>
         <p>
-        This isn’t some hypothetical case of what might or might not occur in the future; this already 
-        happened on more than one occasion. Hackers have used our own digital backdoors to interfere with 
+        In the past, ackers have used our own digital backdoors to interfere with 
         <a href="https://www.wired.com/2015/12/researchers-solve-the-juniper-mystery-and-they-say-its-partially-the-nsas-fault/"
         target=_blank">communication systems</a>, 
         <a href="https://en.wikipedia.org/wiki/Petya_(malware)"
         target=_blank">power grids</a>, and 
         <a href="https://en.wikipedia.org/wiki/Stuxnet"
-        target=_blank">nuclear facilities</a>
+        target=_blank">nuclear facilities</a>.
         That's why the former chief of the National Security Administration has 
         <a href="https://www.businessinsider.com/michael-hayden-encryption-apple-2016-2"
         target=_blank">warned</a> that breaking encryption makes everyone less safe. And yet, Attorney 
@@ -66,20 +67,23 @@ en:
         <p>
         Encryption relies on complicated math equations to effectively hide data from prying eyes. Even 
         if the Department of Justice manages to legally compel tech companies to break the encryption 
-        services they use, anyone with sufficient math and programming skills can simply 
+        services they use, anyone with math and programming skills can simply 
         <a href="https://www.eff.org/deeplinks/2017/07/australian-pm-calls-end-end-encryption-ban-says-laws-mathematics-dont-apply-down"
-        target=_blank">create their own</a> encryption systems. Any sufficiently-motivated bad actors 
+        target=_blank">create their own</a> encryption systems. Sufficiently-motivated bad actors 
         will still be able to communicate in secret, while the rest of us will be left more vulnerable 
         than ever before.
         </p>
         <p>
         And it isn’t just state-sponsored terrorists or malicious hackers we should be worried about.  
         If Barr gets his way, your emails, text messages, computer files, phone calls — literally everything 
-        you say and do online — will be subject to government snooping. Law enforcement agents frequently 
+        you say and do online — will be put at risk. Law enforcement agents frequently 
         <a href="https://apnews.com/699236946e3140659fff8a2362e16f43"
         target=_blank">abuse</a> digital surveillance systems to stalk their romantic interests, snoop on 
-        neighbors, and harass journalists. Providing these people with even greater access into our 
-        activities is certain result in greater abuse.
+        neighbors, and harass journalists. And corporations have a
+        <a href="https://www.theverge.com/2019/2/6/18214667/att-t-mobile-sprint-location-tracking-data-bounty-hunters"
+        target=_blank">history</a> of selling access to your sensitive information for their profit.      
+        Providing these people with even greater access into our online activities is certain result in 
+        greater abuse.
         </p>
         <p>
         Digital backdoors are a disaster waiting to happen, plain and simple. Privacy is a 
@@ -97,7 +101,7 @@ en:
         your profile pic. Share a story. Do whatever you can to let the world know you want to save security!</p>
         
     coalition:
-      title: We stand together
+      title: We Support Encryption
       description_html: |
         These organizations and individuals have shown support for our Save Security campaign on their websites or social media.
 
